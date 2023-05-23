@@ -4,6 +4,9 @@
  */
 package proyecto.proyecto;
 
+import java.time.format.DateTimeFormatter;
+import java.util.LinkedHashMap;
+
 /**
  *
  * @author DAM129
@@ -14,6 +17,17 @@ public class Cuenta implements Identificable{
     private double saldo;
     private double nominaUltimoMes;
     private double mediaIngresos;
+    
+    @Override
+    public LinkedHashMap<String, String> datosObjeto() {
+        LinkedHashMap<String, String> datos = new LinkedHashMap();
+        datos.put("iban", iban);
+        datos.put("tipoCuenta", tipoCuenta.name());
+        datos.put("saldo", String.valueOf(saldo));
+        datos.put("nominaUltimoMes", String.valueOf(nominaUltimoMes));
+        datos.put("mediaIngresos", String.valueOf(mediaIngresos));
+        return datos;
+    }
 
     public String getIban() {
         return iban;
@@ -54,6 +68,5 @@ public class Cuenta implements Identificable{
     public void setMediaIngresos(double mediaIngresos) {
         this.mediaIngresos = mediaIngresos;
     }
-    
-    
+ 
 }

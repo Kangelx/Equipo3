@@ -4,6 +4,8 @@
  */
 package proyecto.proyecto;
 
+import java.util.LinkedHashMap;
+
 /**
  *
  * @author DAM129
@@ -13,9 +15,22 @@ public class Perfil implements Identificable{
     private String passwd;
     private SitCivil sitCivil;
     private SitLaboral sitLaboral;
-    private boolean ProblemasLegales;
+    private boolean problemasLegales;
     private boolean gananciales;
     private String idConyuge;
+    
+    @Override
+    public LinkedHashMap<String, String> datosObjeto() {
+        LinkedHashMap<String, String> datos = new LinkedHashMap();
+        datos.put("idCliente", String.valueOf(idCliente));
+        datos.put("password", passwd);
+        datos.put("situacionCivil", sitCivil.name());
+        datos.put("situacionLaboral", sitLaboral.name());
+        datos.put("problemasLegales", String.valueOf(problemasLegales));
+        datos.put("gananciales", String.valueOf(gananciales));
+        datos.put("idConyuge", String.valueOf(idConyuge));
+        return datos;
+    }
 
     public int getIdCliente() {
         return idCliente;
@@ -50,11 +65,11 @@ public class Perfil implements Identificable{
     }
 
     public boolean isProblemasLegales() {
-        return ProblemasLegales;
+        return problemasLegales;
     }
 
     public void setProblemasLegales(boolean ProblemasLegales) {
-        this.ProblemasLegales = ProblemasLegales;
+        this.problemasLegales = ProblemasLegales;
     }
 
     public boolean isGananciales() {
@@ -72,6 +87,8 @@ public class Perfil implements Identificable{
     public void setIdConyuge(String idConyuge) {
         this.idConyuge = idConyuge;
     }
+
+    
     
     
 }

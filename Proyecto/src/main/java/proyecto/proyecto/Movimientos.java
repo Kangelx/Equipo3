@@ -4,6 +4,9 @@
  */
 package proyecto.proyecto;
 
+import java.time.format.DateTimeFormatter;
+import java.util.LinkedHashMap;
+
 /**
  *
  * @author DAM129
@@ -15,6 +18,18 @@ public class Movimientos implements Identificable{
     private String concepto;
     private String emisor;
     private String receptor;
+    
+    @Override
+    public LinkedHashMap<String, String> datosObjeto() {
+        LinkedHashMap<String, String> datos = new LinkedHashMap();
+        datos.put("idOperacion", String.valueOf(idOperacion));
+        datos.put("tipoOperacion", tipoOperacion.name());
+        datos.put("cantidad", String.valueOf(cantidad));
+        datos.put("concepto", concepto);
+        datos.put("emisor", emisor);
+        datos.put("receptor", receptor);
+        return datos;
+    }
 
     public int getIdOperacion() {
         return idOperacion;
@@ -63,6 +78,8 @@ public class Movimientos implements Identificable{
     public void setReceptor(String receptor) {
         this.receptor = receptor;
     }
+
+    
     
     
 }
