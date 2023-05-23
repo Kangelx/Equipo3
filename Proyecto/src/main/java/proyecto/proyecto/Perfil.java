@@ -18,6 +18,21 @@ public class Perfil implements Identificable{
     private boolean problemasLegales;
     private boolean gananciales;
     private String idConyuge;
+
+    public Perfil(int idCliente, String passwd, SitCivil sitCivil, SitLaboral sitLaboral, boolean problemasLegales, boolean gananciales, String idConyuge) {
+        this.idCliente = idCliente;
+        this.passwd = passwd;
+        this.sitCivil = sitCivil;
+        this.sitLaboral = sitLaboral;
+        this.problemasLegales = problemasLegales;
+        this.gananciales = gananciales;
+        this.idConyuge = idConyuge;
+    }
+
+    public Perfil() {
+    }
+    
+    
     
     @Override
     public LinkedHashMap<String, String> datosObjeto() {

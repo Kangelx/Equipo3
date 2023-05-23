@@ -18,6 +18,18 @@ public class Pago implements Identificable{
     private LocalDate fechaPago;
     private double cantPagado;
 
+    public Pago(int idPago, int idPrestamo, LocalDate fechaPago, double cantPagado) {
+        this.idPago = idPago;
+        this.idPrestamo = idPrestamo;
+        this.fechaPago = fechaPago;
+        this.cantPagado = cantPagado;
+    }
+
+    public Pago() {
+    }
+    
+    
+
     @Override
     public LinkedHashMap<String, String> datosObjeto() {
         LinkedHashMap<String, String> datos = new LinkedHashMap();

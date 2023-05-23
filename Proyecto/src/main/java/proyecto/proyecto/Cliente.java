@@ -6,16 +6,15 @@ package proyecto.proyecto;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import java.util.List;
 
 /**
  *
  * @author DAM129
  */
-public class Cliente implements Identificable{
-    private String id;
+public class Cliente implements Identificable {
+
+    private int id;
     private String dni;
     private String nombre;
     private String apellidos;
@@ -23,13 +22,26 @@ public class Cliente implements Identificable{
     private String direccion;
     private String localidad;
     private LocalDate fechanac;
-    private List<Prestamo> prestamos = new ArrayList();
 
-    public String getId() {
+    public Cliente(int id, String dni, String nombre, String apellidos, String telefono, String direccion, String localidad, LocalDate fechanac) {
+        this.id = id;
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.localidad = localidad;
+        this.fechanac = fechanac;
+    }
+
+    public Cliente() {
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -89,33 +101,19 @@ public class Cliente implements Identificable{
         this.fechanac = fechanac;
     }
 
-    public List<Prestamo> getPrestamos() {
-        return prestamos;
-    }
-
-    public void setPrestamos(List<Prestamo> prestamos) {
-        this.prestamos = prestamos;
-    }
-
     @Override
     public LinkedHashMap<String, String> datosObjeto() {
         LinkedHashMap<String, String> datos = new LinkedHashMap();
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        datos.put("id", id);
+        datos.put("id", String.valueOf(id));
         datos.put("dni", dni);
         datos.put("nombre", nombre);
-        datos.put("apellidos", id);
-        datos.put("telefono",  telefono);
+        datos.put("apellidos", apellidos);
+        datos.put("telefono", telefono);
         datos.put("direccion", direccion);
         datos.put("localidad", localidad);
         datos.put("fechaNacimiento", fechanac.format(formato));
-        for (Prestamo prestamo : prestamos) {
-            datos.putAll(prestamo.datosObjeto());
-        }
         return datos;
     }
-    
-    
-    
-    
+
 }

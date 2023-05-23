@@ -18,6 +18,20 @@ public class Movimientos implements Identificable{
     private String concepto;
     private String emisor;
     private String receptor;
+
+    public Movimientos(int idOperacion, TipoOperacion tipoOperacion, double cantidad, String concepto, String emisor, String receptor) {
+        this.idOperacion = idOperacion;
+        this.tipoOperacion = tipoOperacion;
+        this.cantidad = cantidad;
+        this.concepto = concepto;
+        this.emisor = emisor;
+        this.receptor = receptor;
+    }
+
+    public Movimientos() {
+    }
+    
+    
     
     @Override
     public LinkedHashMap<String, String> datosObjeto() {

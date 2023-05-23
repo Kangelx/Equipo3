@@ -27,6 +27,25 @@ public class Prestamo implements Identificable{
     private LocalDate fechaFirma;
     private ArrayList<Pago> pagos;
 
+    public Prestamo(int idPrestamo, int idBeneficiario, double cantidad, int duracion, int tipoInteres, double cantidadMensual, int diasAceptar, EstadoSoli estado, LocalDate fechaOferta, LocalDate fechaFirma, ArrayList<Pago> pagos) {
+        this.idPrestamo = idPrestamo;
+        this.idBeneficiario = idBeneficiario;
+        this.cantidad = cantidad;
+        this.duracion = duracion;
+        this.tipoInteres = tipoInteres;
+        this.cantidadMensual = cantidadMensual;
+        this.diasAceptar = diasAceptar;
+        this.estado = estado;
+        this.fechaOferta = fechaOferta;
+        this.fechaFirma = fechaFirma;
+        this.pagos = pagos;
+    }
+
+    public Prestamo() {
+    }
+    
+    
+
     public LinkedHashMap<String, String> datosObjeto(){
         LinkedHashMap<String, String> datos = new LinkedHashMap();
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");

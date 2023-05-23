@@ -17,6 +17,18 @@ public class Cuenta implements Identificable{
     private double saldo;
     private double nominaUltimoMes;
     private double mediaIngresos;
+
+    public Cuenta(String iban, TipoCuenta tipoCuenta, double saldo, double nominaUltimoMes, double mediaIngresos) {
+        this.iban = iban;
+        this.tipoCuenta = tipoCuenta;
+        this.saldo = saldo;
+        this.nominaUltimoMes = nominaUltimoMes;
+        this.mediaIngresos = mediaIngresos;
+    }
+
+    public Cuenta() {
+    }
+    
     
     @Override
     public LinkedHashMap<String, String> datosObjeto() {
