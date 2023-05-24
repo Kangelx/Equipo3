@@ -35,3 +35,26 @@ Hemos creada la página de inicio y una pestaña para registrar nuevos usuarios 
 Se ha  inicializado la estructura  de java.
 Han surgido muchos problemas organizativos a la hora de adaptar el diseño de la base de datos con programación y el diseño de clases.
 
+DIA 3
+Se han hecho cambios y pulido el diagrama E-R y relaciona
+Se han creado las tablas, establecido las FK, PK y UK de la base de datos. 
+Se han insertado datos en la base de datos para ir trabajando con algo.
+Se ha mejorado la estructura de programación.
+Se ha creado el servidor.
+
+Objetivos de hoy:
+Probar el servidor, conectarlo a la base de datos.
+Todas las funciones de las clases de java.
+Crear procedimiento y triggers en la base de datos.
+Diagramas de secuencia.
+
+Reunión al finalizar:
+Se han perfeccionado los diagramas E-R y relacional debido a que se han introducido cambios y se han ajustado las relaciones y tablas para simplificar el trabajo a la hora de programar.
+Se han relizado todos los diagramas secuenciales.
+Se han hecho modificaciones en el diagrama de clases y casos de uso.
+Hemos empezado con las funciones entre Java y SQL.
+Hemos comprobado  la funcionalidad del servidor con la base de datos y la página web.
+Seguimos desarrollando la página web añadiendo formularios, enlaces a otras páginas.
+
+Ha sido un día muy productivo, hemos empezado a coger velocidad.
+
