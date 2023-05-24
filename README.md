@@ -36,6 +36,8 @@ Se ha  inicializado la estructura  de java.
 Han surgido muchos problemas organizativos a la hora de adaptar el diseño de la base de datos con programación y el diseño de clases.
 
 DIA 3
+
+
 Se han hecho cambios y pulido el diagrama E-R y relaciona
 Se han creado las tablas, establecido las FK, PK y UK de la base de datos. 
 Se han insertado datos en la base de datos para ir trabajando con algo.
