@@ -43,8 +43,6 @@ public class Prestamo implements Identificable{
 
     public Prestamo() {
     }
-    
-    
 
     public LinkedHashMap<String, String> datosObjeto(){
         LinkedHashMap<String, String> datos = new LinkedHashMap();

@@ -31,8 +31,6 @@ public class Movimientos implements Identificable{
     public Movimientos() {
     }
     
-    
-    
     @Override
     public LinkedHashMap<String, String> datosObjeto() {
         LinkedHashMap<String, String> datos = new LinkedHashMap();

@@ -32,8 +32,6 @@ public class Perfil implements Identificable{
     public Perfil() {
     }
     
-    
-    
     @Override
     public LinkedHashMap<String, String> datosObjeto() {
         LinkedHashMap<String, String> datos = new LinkedHashMap();

@@ -27,8 +27,6 @@ public class Pago implements Identificable{
 
     public Pago() {
     }
-    
-    
 
     @Override
     public LinkedHashMap<String, String> datosObjeto() {
