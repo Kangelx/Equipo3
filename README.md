@@ -1,6 +1,9 @@
 # Equipo3
 Proyecto
+
+
 DIA 1
+
 
 Tareas:
 Dividir las tareas entre los miembros.
@@ -21,6 +24,7 @@ Todo esto es de de carácter orientativo y puede ser susceptible al cambio en ba
 
 
 DIA 2
+
 
 Hemos realizados el diagrama E-R de Base de Datos.
 Hemos realizados el diagrama relacional de Base de Datos.
