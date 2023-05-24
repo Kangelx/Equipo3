@@ -12,13 +12,15 @@ import java.util.LinkedHashMap;
  * @author DAM129
  */
 public class Cuenta implements Identificable{
+    private String idCliente;
     private String iban;
     private TipoCuenta tipoCuenta;
     private double saldo;
     private double nominaUltimoMes;
     private double mediaIngresos;
 
-    public Cuenta(String iban, TipoCuenta tipoCuenta, double saldo, double nominaUltimoMes, double mediaIngresos) {
+    public Cuenta(String idCliente, String iban, TipoCuenta tipoCuenta, double saldo, double nominaUltimoMes, double mediaIngresos) {
+        this.idCliente = idCliente;
         this.iban = iban;
         this.tipoCuenta = tipoCuenta;
         this.saldo = saldo;
@@ -33,12 +35,21 @@ public class Cuenta implements Identificable{
     @Override
     public LinkedHashMap<String, String> datosObjeto() {
         LinkedHashMap<String, String> datos = new LinkedHashMap();
+        datos.put("idCliente", idCliente);
         datos.put("iban", iban);
         datos.put("tipoCuenta", tipoCuenta.name());
         datos.put("saldo", String.valueOf(saldo));
         datos.put("nominaUltimoMes", String.valueOf(nominaUltimoMes));
         datos.put("mediaIngresos", String.valueOf(mediaIngresos));
         return datos;
+    }
+
+    public String getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(String idCliente) {
+        this.idCliente = idCliente;
     }
 
     public String getIban() {

@@ -12,6 +12,7 @@ import java.util.LinkedHashMap;
  * @author DAM129
  */
 public class Movimientos implements Identificable{
+    private String iban;
     private int idOperacion;
     private TipoOperacion tipoOperacion;
     private double cantidad;
@@ -19,7 +20,8 @@ public class Movimientos implements Identificable{
     private String emisor;
     private String receptor;
 
-    public Movimientos(int idOperacion, TipoOperacion tipoOperacion, double cantidad, String concepto, String emisor, String receptor) {
+    public Movimientos(String iban, int idOperacion, TipoOperacion tipoOperacion, double cantidad, String concepto, String emisor, String receptor) {
+        this.iban = iban;
         this.idOperacion = idOperacion;
         this.tipoOperacion = tipoOperacion;
         this.cantidad = cantidad;
@@ -34,6 +36,7 @@ public class Movimientos implements Identificable{
     @Override
     public LinkedHashMap<String, String> datosObjeto() {
         LinkedHashMap<String, String> datos = new LinkedHashMap();
+        datos.put("iban", iban);
         datos.put("idOperacion", String.valueOf(idOperacion));
         datos.put("tipoOperacion", tipoOperacion.name());
         datos.put("cantidad", String.valueOf(cantidad));
@@ -42,6 +45,15 @@ public class Movimientos implements Identificable{
         datos.put("receptor", receptor);
         return datos;
     }
+
+    public String getIban() {
+        return iban;
+    }
+
+    public void setIban(String iban) {
+        this.iban = iban;
+    }
+    
 
     public int getIdOperacion() {
         return idOperacion;

@@ -14,7 +14,7 @@ import java.util.LinkedHashMap;
  */
 public class Cliente implements Identificable {
 
-    private int id;
+    private String id;
     private String dni;
     private String nombre;
     private String apellidos;
@@ -23,7 +23,7 @@ public class Cliente implements Identificable {
     private String localidad;
     private LocalDate fechanac;
 
-    public Cliente(int id, String dni, String nombre, String apellidos, String telefono, String direccion, String localidad, LocalDate fechanac) {
+    public Cliente(String id, String dni, String nombre, String apellidos, String telefono, String direccion, String localidad, LocalDate fechanac) {
         this.id = id;
         this.dni = dni;
         this.nombre = nombre;
@@ -37,11 +37,11 @@ public class Cliente implements Identificable {
     public Cliente() {
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -105,7 +105,7 @@ public class Cliente implements Identificable {
     public LinkedHashMap<String, String> datosObjeto() {
         LinkedHashMap<String, String> datos = new LinkedHashMap();
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        datos.put("id", String.valueOf(id));
+        datos.put("id", id);
         datos.put("dni", dni);
         datos.put("nombre", nombre);
         datos.put("apellidos", apellidos);

@@ -11,7 +11,7 @@ import java.util.LinkedHashMap;
  * @author DAM129
  */
 public class Perfil implements Identificable{
-    private int idCliente;
+    private String idCliente;
     private String passwd;
     private SitCivil sitCivil;
     private SitLaboral sitLaboral;
@@ -19,7 +19,7 @@ public class Perfil implements Identificable{
     private boolean gananciales;
     private String idConyuge;
 
-    public Perfil(int idCliente, String passwd, SitCivil sitCivil, SitLaboral sitLaboral, boolean problemasLegales, boolean gananciales, String idConyuge) {
+    public Perfil(String idCliente, String passwd, SitCivil sitCivil, SitLaboral sitLaboral, boolean problemasLegales, boolean gananciales, String idConyuge) {
         this.idCliente = idCliente;
         this.passwd = passwd;
         this.sitCivil = sitCivil;
@@ -35,7 +35,7 @@ public class Perfil implements Identificable{
     @Override
     public LinkedHashMap<String, String> datosObjeto() {
         LinkedHashMap<String, String> datos = new LinkedHashMap();
-        datos.put("idCliente", String.valueOf(idCliente));
+        datos.put("idCliente", idCliente);
         datos.put("password", passwd);
         datos.put("situacionCivil", sitCivil.name());
         datos.put("situacionLaboral", sitLaboral.name());
@@ -45,11 +45,11 @@ public class Perfil implements Identificable{
         return datos;
     }
 
-    public int getIdCliente() {
+    public String getIdCliente() {
         return idCliente;
     }
 
-    public void setIdCliente(int idCliente) {
+    public void setIdCliente(String idCliente) {
         this.idCliente = idCliente;
     }
 
