@@ -38,7 +38,8 @@ public class FuncionesCuentas implements Repositorio<Cuentas>{
     }
     
     @Override
-    public void guardar(Cuentas c) {
+    public boolean guardar(Cuentas c) {
+        boolean realizado=false;//BOOLEANO PARA VENTANAS
         String sql = null;
         if (porId(c.getIban()) != null) {
             sql = "UPDATE usuarios SET iban=?, tipocuenta=?, saldo=?, nominaUltimo=?, nominaMedAnual=? WHERE iban=?";
@@ -61,17 +62,19 @@ public class FuncionesCuentas implements Repositorio<Cuentas>{
             } else {
                 System.out.println("Fila insertada: " + salida);
             }
-            
+            realizado=true;
         } catch (SQLException ex) {
             // errores
             System.out.println("SQLException: " + ex.getMessage());
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
+        return realizado;
     }
     
     @Override
-    public void eliminar(String iban) {
+    public boolean eliminar(String iban) {
+        boolean realizado=false;//BOOLEANO PARA VENTANAS
         String sql = "DELETE FROM cuentas WHERE iban=?";
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
             stmt.setString(1, iban);
@@ -79,12 +82,14 @@ public class FuncionesCuentas implements Repositorio<Cuentas>{
             if (salida != 1) {
                 throw new Exception(" No se ha borrado un solo registro");
             }
+            realizado=true;
         } catch (SQLException ex) {
             // errores
             System.out.println("SQLException: " + ex.getMessage());
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
+        return realizado;
     }
     
     

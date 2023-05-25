@@ -41,7 +41,8 @@ public class FuncionesClientes implements Repositorio<Clientes>{
     }
     
     @Override
-    public void guardar(Clientes c) {
+    public boolean guardar(Clientes c) {
+        boolean realizado=true;         //BOOLEANO PARA VENTANAS
         String sql = null;
         if (porId(c.getUuid() )!= null) {
             sql = "UPDATE clientes SET uuid=?, dni=?, nombre=?, apellidos=?, telefono=?, direccion=?, localidad=?, fechaNac=?, iban=? WHERE uuid=?";
@@ -67,9 +68,11 @@ public class FuncionesClientes implements Repositorio<Clientes>{
             int salida = stmt.executeUpdate();
             if (salida != 1) {
                 throw new Exception(" No se ha insertado/modificado un solo registro");
+                
             } else {
                 System.out.println("Fila insertada: " + salida);
             }
+            realizado=true;
             
         } catch (SQLException ex) {
             // errores
@@ -77,10 +80,12 @@ public class FuncionesClientes implements Repositorio<Clientes>{
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
+        return realizado;
     }
     
     @Override
-    public void eliminar(String uuid) {
+    public boolean eliminar(String uuid) {
+        boolean realizado=false;        //BOOLEANO VENTANAS
         String sql = "DELETE FROM clientes WHERE uuid=?";
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
             stmt.setString(1, uuid);
@@ -88,12 +93,14 @@ public class FuncionesClientes implements Repositorio<Clientes>{
             if (salida != 1) {
                 throw new Exception(" No se ha borrado un solo registro");
             }
+            realizado=true;
         } catch (SQLException ex) {
             // errores
             System.out.println("SQLException: " + ex.getMessage());
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
+        return realizado;
     }
     
 }

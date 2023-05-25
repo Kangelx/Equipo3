@@ -39,7 +39,8 @@ public class FuncionesPrestamo implements Repositorio<Prestamos>{
     }
     
     @Override
-    public void guardar(Prestamos p) {
+    public boolean guardar(Prestamos p) {
+        boolean realizado=false;//BOOLEANO PARA VENTANAS
         String sql = null;
         if (porId(p.getUuid()) != null) {
             sql = "UPDATE prestamos SET idPres=?, periodo=?, fechaOfer=?, plazo=?, interes=?, cantidad=?, fechafirma=?, cantMens=?, uuid=? WHERE uuid=?";
@@ -67,17 +68,19 @@ public class FuncionesPrestamo implements Repositorio<Prestamos>{
             } else {
                 System.out.println("Fila insertada: " + salida);
             }
-            
+            realizado=true;
         } catch (SQLException ex) {
             // errores
             System.out.println("SQLException: " + ex.getMessage());
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
+        return realizado;
     }
     
     @Override
-    public void eliminar(String uuid) {
+    public boolean eliminar(String uuid) {
+        boolean realizado=false;//BOOLEANO PARA VENTANAS
         String sql = "DELETE FROM prestamos WHERE uuid=?";
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
             stmt.setString(1, uuid);
@@ -85,12 +88,14 @@ public class FuncionesPrestamo implements Repositorio<Prestamos>{
             if (salida != 1) {
                 throw new Exception(" No se ha borrado un solo registro");
             }
+            realizado=true;
         } catch (SQLException ex) {
             // errores
             System.out.println("SQLException: " + ex.getMessage());
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
+        return realizado;
     }
     
    

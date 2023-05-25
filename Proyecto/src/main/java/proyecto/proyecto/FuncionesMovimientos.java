@@ -38,7 +38,8 @@ public class FuncionesMovimientos {
     }
     
     
-    public void guardar(Movimientos m) {
+    public boolean guardar(Movimientos m) {
+        boolean realizado=false;//BOOLEANO PARA VENTANAS
         String sql = null;
         if (porId(m.getIdOperacion()) != null) {
             sql = "UPDATE usuarios SET idOperacion=?, cantidad=?, concepto=?, ibanDestinatario=?, ibanemisor=?, iban=? WHERE idOperacion=?";
@@ -62,17 +63,19 @@ public class FuncionesMovimientos {
             } else {
                 System.out.println("Fila insertada: " + salida);
             }
-            
+            realizado=true;
         } catch (SQLException ex) {
             // errores
             System.out.println("SQLException: " + ex.getMessage());
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
+        return realizado;
     }
     
     
-    public void eliminar(int id) {
+    public boolean eliminar(int id) {
+        boolean realizado=false;//BOOLEANO PARA VENTANAS
         String sql = "DELETE FROM movimientos WHERE idOperacion=?";
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
             stmt.setInt(1, id);
@@ -80,12 +83,14 @@ public class FuncionesMovimientos {
             if (salida != 1) {
                 throw new Exception(" No se ha borrado un solo registro");
             }
+            realizado=true;
         } catch (SQLException ex) {
             // errores
             System.out.println("SQLException: " + ex.getMessage());
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
+        return realizado;
     }
     
     

@@ -38,7 +38,8 @@ public class FuncionesPagos {
         return pago;
     }
     
-    public void guardar(Pagos p) {
+    public boolean guardar(Pagos p) {
+        boolean realizado=false;//BOOLEANO PARA VENTANAS
         String sql = null;
         if (porId(p.getIdPago()) != null) {
             sql = "UPDATE pagos SET idPago=?, fecha=?, cantidad=?, idPres=? WHERE idPago=?";
@@ -60,16 +61,18 @@ public class FuncionesPagos {
             } else {
                 System.out.println("Fila insertada: " + salida);
             }
-            
+            realizado=true;
         } catch (SQLException ex) {
             // errores
             System.out.println("SQLException: " + ex.getMessage());
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
+        return realizado;
     }
     
-    public void eliminar(int id) {
+    public boolean eliminar(int id) {
+        boolean realizado=false;//BOOLEANO PARA VENTANAS
         String sql = "DELETE FROM pagos WHERE idPago=?";
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
             stmt.setInt(1, id);
@@ -77,12 +80,14 @@ public class FuncionesPagos {
             if (salida != 1) {
                 throw new Exception(" No se ha borrado un solo registro");
             }
+            realizado=true;
         } catch (SQLException ex) {
             // errores
             System.out.println("SQLException: " + ex.getMessage());
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
+        return realizado;
     }
     
     

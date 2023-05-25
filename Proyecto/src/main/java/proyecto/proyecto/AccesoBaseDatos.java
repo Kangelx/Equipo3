@@ -16,7 +16,7 @@ import java.util.Properties;
 public class AccesoBaseDatos {
     private Connection conn = null; //atributo conexión
     // constantes a definir
-    private static final String BD = "ejemplo";
+    private static final String BD = "prestamos";
     private static final String USUARIO = "root";
     private static final String CLAVE = "root";
     private static final String URL = "jdbc:mysql://192.168.56.101:3306/" + BD;
