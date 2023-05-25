@@ -64,3 +64,26 @@ Seguimos desarrollando la página web añadiendo formularios, enlaces a otras p�
 
 Ha sido un día muy productivo, hemos empezado a coger velocidad.
 
+
+DIA 4
+
+
+La base de datos está acabada, falta añadir funcionalidades extra.
+Se ha modificado algunos atributos en la base de datos y se ha modificado una relación para que sea  más facil de programar.
+Se han insertado todos los datos en la base de datos.
+Se ha realizado el documento 
+Hoy nos vamos a dedicar a añadir triggers y procedimientos a la base de datos.
+Continuaremos haciendo la página web.
+Acabaremos el esquema de clase.
+Pasar los cambios hechos en la base de datos a Java.
+Comenzar con ventanas en Java.
+
+Hemos añadido eventos a la base de datos.
+Modificado y añadido algunas columnas a la base de datos.
+Hemos empezado a realizar los métodos que van a interactuar con las ventanas.
+Hemos acabado el esquema de las clases.
+Diseñado la estructura general de las ventanas.
+Se ha ampliado la página web, añadiendo una página de inicio.
+Se han mejorado los formularios.
+
+
