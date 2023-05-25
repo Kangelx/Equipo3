@@ -16,9 +16,13 @@ Hemos resuelto el problema de GitHub y están divididas las tareas y funciones, 
 El resultado de las funciones es:
 
 Pablo Sáinz Luque creará la Base de Datos.
+
 Adrián De Diego Fernandez se encargará de la realización de la página web en XHTML.
+
 Alejandro Peñil Haya establecerá el servidor y realizará el documento MarkDown .
+
 Tania Chocán Alexandre  se encargará de Entorno de Desarrollos.
+
 Ángel García García realizará el apartado de Progamación.
 
 Todo esto es de de carácter orientativo y puede ser susceptible al cambio en base a cómo se desenvuelva el día a día. Asímismo, estamos dispuesto a ayudarnos unos a otros en lo que haga falta.
