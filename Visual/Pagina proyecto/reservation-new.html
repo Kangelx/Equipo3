@@ -88,12 +88,7 @@
 
         <section class="full-box page-content">
             <nav class="full-box navbar-info">
-                <a href="#" class="float-left show-nav-lateral">
-                    <i class="fas fa-exchange-alt"></i>
-                </a>
-                <a href="user-update.html">
-                    <i class="fas fa-user-cog"></i>
-                </a>
+                
                 <a href="#" class="btn-exit-system">
                     <i class="fas fa-power-off"></i>
                 </a>
@@ -113,11 +108,12 @@
                     <li>
                         <a href="reservation-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; LISTA DE PRÉSTAMOS</a>
                     </li>
-                    <li>
-                        <a href="reservation-search.html"><i class="fas fa-search-dollar fa-fw"></i> &nbsp; BUSCAR PRÉSTAMOS</a>
-                    </li>
+                    
                     <li>
                         <a href="reservation-pending.html"><i class="fas fa-hand-holding-usd fa-fw"></i> &nbsp; PRÉSTAMOS PENDIENTES</a>
+                    </li>
+                    <li>
+                        <a href="reservation-pre-approved.html"><i class="fas fa-hand-holding-usd fa-fw"></i> &nbsp; PRESTAMOS PRECONCEDIDOS</a>
                     </li>
                 </ul>
             </div>
@@ -125,56 +121,10 @@
             
             <div class="container-fluid">
             	<div class="container-fluid form-neon">
-                    <div class="container-fluid">
+                    
                         
-                        <p class="text-center">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalCliente"><i class="fas fa-user-plus"></i> &nbsp; Agregar cliente</button>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalItem"><i class="fas fa-box-open"></i> &nbsp; Agregar movimiento</button>
-                        </p>
-                        <div>
-                            <span class="roboto-medium">CLIENTE:</span> 
-                            <span class="text-danger">&nbsp; <i class="fas fa-exclamation-triangle"></i> Seleccione un cliente</span>
-                  			<form action="" style="display: inline-block !important;">
-                            	nombre del cliente
-                                <button type="button" class="btn btn-danger"><i class="fas fa-user-times"></i></button>
-                            </form>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-dark table-sm">
-                                <thead>
-                                    <tr class="text-center roboto-medium">
-                                        <th>MOVIMIENTO</th>
-                                        <th>CANTIDAD</th>
-                                        <th>ELIMINAR</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="text-center" >
-                                        <td>NOMBRE DEL MOVIMIENTO</td>
-                                        <td>7</td>
-                                        <td>
-                                            <form action="">
-                                                <button type="button" class="btn btn-warning">
-                                                    <i class="far fa-trash-alt"></i>
-                                                </button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                    <tr class="text-center" >
-                                        <td>NOMBRE DEL MOVIMIENTO</td>
-                                        <td>9</td>
-                                        <td>
-                                            <form action="">
-                                                <button type="button" class="btn btn-warning">
-                                                    <i class="far fa-trash-alt"></i>
-                                                </button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                        
+                        
 					<form action="" autocomplete="off">
 						<fieldset>
 							<legend><i class="far fa-plus-square"></i> &nbsp; Información del prestamo</legend>
@@ -182,46 +132,47 @@
 								<div class="row">
 									<div class="col-12 col-md-4">
 										<div class="form-group">
-											<label for="prestamo_fecha_inicio">Fecha de reserva</label>
-											<input type="date" class="form-control" name="prestamo_fecha_inicio" id="admin-dni">
+											<label for="prestamo_fecha_inicio">Nombre</label>
+											<input type="text" class="form-control" name="prestamo_fecha_inicio" id="admin-dni">
 										</div>
 									</div>
-									
 									<div class="col-12 col-md-4">
 										<div class="form-group">
-											<label for="prestamo_fecha_final">Fecha de entrega</label>
-											<input type="date" class="form-control" name="prestamo_fecha_final" id="prestamo_fecha_final">
+											<label for="prestamo_fecha_final">DNI/NIE</label>
+											<input type="text" class="form-control" name="prestamo_fecha_final" id="prestamo_fecha_final">
+										</div>
+									</div>
+									<div class="col-12 col-md-4">
+										<div class="form-group">
+											<label for="prestamo_fecha_final">Ingresos del ultimo mes</label>
+											<input type="double" class="form-control" name="prestamo_fecha_final" id="prestamo_fecha_final">
+										</div>
+									</div>
+                                    <div class="col-12 col-md-4">
+										<div class="form-group">
+											<label for="prestamo_fecha_final">Ingresos del ultimo mes</label>
+											<input type="double" class="form-control" name="prestamo_fecha_final" id="prestamo_fecha_final">
 										</div>
 									</div>
 									<div class="col-12 col-md-4">
 	                                    <div class="form-group">
-	                                        <label for="prestamo_estado" class="bmd-label-floating">Estado</label>
+	                                        <label for="prestamo_estado" class="bmd-label-floating">Estado civil</label>
 	                                        <select class="form-control" name="item_estado" id="item_estado">
 	                                            <option value="" selected="" disabled="">Seleccione una opción</option>
-	                                            <option value="Prestamo">Préstamo</option>
-	                                            <option value="Reservacion">Reservación</option>
-	                                            <option value="Finalizado">Finalizado</option>
+	                                            <option value="Prestamo">Soltero</option>
+	                                            <option value="Reservacion">Casado</option>
+	                                            
 	                                        </select>
 	                                    </div>
 	                                </div>
 									<div class="col-12 col-md-6">
 										<div class="form-group">
-											<label for="prestamo_total" class="bmd-label-floating">Total a pagar</label>
-											<input type="text" pattern="[0-9.]{1,10}" class="form-control" name="prestamo_total" id="prestamo_total" maxlength="10">
+											<label for="prestamo_total" class="bmd-label-floating">Importe del préstamo a solicitar</label>
+											<input type="double" class="form-control" name="prestamo_total" id="prestamo_total" maxlength="8">
 										</div>
 									</div>
-	                                <div class="col-12 col-md-6">
-	                                    <div class="form-group">
-	                                        <label for="prestamo_pagado" class="bmd-label-floating">Total depositado</label>
-	                                        <input type="text" pattern="[0-9.]{1,10}" class="form-control" name="prestamo_pagado" id="prestamo_pagado" maxlength="10">
-	                                    </div>
-	                                </div>
-	                                <div class="col-12">
-	                                    <div class="form-group">
-	                                        <label for="prestamo_observacion" class="bmd-label-floating">Observación</label>
-	                                        <input type="text" pattern="[a-zA-z0-9áéíóúÁÉÍÓÚñÑ#() ]{1,400}" class="form-control" name="prestamo_observacion" id="prestamo_observacion" maxlength="400">
-	                                    </div>
-	                                </div>
+	                               
+	                                
 								</div>
 							</div>
 						</fieldset>
@@ -229,7 +180,7 @@
 						<p class="text-center" style="margin-top: 40px;">
 							<button type="reset" class="btn btn-raised btn-secondary btn-sm"><i class="fas fa-paint-roller"></i> &nbsp; LIMPIAR</button>
 							&nbsp; &nbsp;
-							<button type="submit" class="btn btn-raised btn-info btn-sm"><i class="far fa-save"></i> &nbsp; GUARDAR</button>
+							<button type="submit" class="btn btn-raised btn-info btn-sm"><i class="far fa-save"></i> &nbsp; SOLICITAR</button>
 						</p>
 					</form>
             	</div>

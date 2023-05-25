@@ -90,12 +90,7 @@
 
         <section class="full-box page-content">
             <nav class="full-box navbar-info">
-                <a href="#" class="float-left show-nav-lateral">
-                    <i class="fas fa-exchange-alt"></i>
-                </a>
-                <a href="user-update.html">
-                    <i class="fas fa-user-cog"></i>
-                </a>
+                
                 <a href="#" class="btn-exit-system">
                     <i class="fas fa-power-off"></i>
                 </a>
@@ -115,11 +110,12 @@
                     <li>
                         <a class="active" href="reservation-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; LISTA DE PRÉSTAMOS</a>
                     </li>
-                    <li>
-                        <a href="reservation-search.html"><i class="fas fa-search-dollar fa-fw"></i> &nbsp; BUSCAR PRÉSTAMOS</a>
-                    </li>
+                   
                     <li>
                         <a href="reservation-pending.html"><i class="fas fa-hand-holding-usd fa-fw"></i> &nbsp; PRÉSTAMOS PENDIENTES</a>
+                    </li>
+					<li>
+                        <a href="reservation-pre-approved.html"><i class="fas fa-hand-holding-usd fa-fw"></i> &nbsp; PRÉSTAMOS PRECONCEDIDOS</a>
                     </li>
                 </ul>
             </div>
@@ -130,132 +126,66 @@
 						<thead>
 							<tr class="text-center roboto-medium">
 								<th>#</th>
-								<th>CLIENTE</th>
+								<th>ID DE PRESTAMO</th>
 								<th>FECHA DE PRÉSTAMO</th>
-								<th>FECHA DE ENTREGA</th>
+								<th>FECHA DE FIN</th>
 								<th>ESTADO</th>
-								<th>FACTURA</th>
-								<th>ACTUALIZAR</th>
-								<th>PAGOS</th>
-								<th>ELIMINAR</th>
+								<th>EXTRACTOS</th>
+								
 							</tr>
 						</thead>
 						<tbody>
-							<tr class="text-center" >
+							<tr class="text-center tr-color" >
 								<td>1</td>
-								<td>NOMBRE CLIENTE</td>
-								<td>2017/10/8</td>
-								<td>2017/10/10</td>
+								<td>PBNP1234</td>
+								<td>30/05/2023</td>
+								<td>30/05/2024</td>
 								<td>Pendiente</td>
 								<td>
 									<a href="#" class="btn btn-info">
 	  									<i class="fas fa-file-pdf"></i>	
 									</a>
 								</td>
-								<td>
-									<a href="reservation-update.html" class="btn btn-success">
-	  									<i class="fas fa-sync-alt"></i>	
-									</a>
-								</td>
-								<td>
-									<a href="payment.html" class="btn btn-info">
-	  									<i class="fas fa-dollar-sign"></i>	
-									</a>
-								</td>
-								<td>
-									<form action="">
-										<button type="button" class="btn btn-warning">
-		  									<i class="far fa-trash-alt"></i>
-										</button>
-									</form>
-								</td>
+								
 							</tr>
-							<tr class="text-center" >
+							<tr class="text-center tr-color" >
 								<td>2</td>
-								<td>NOMBRE CLIENTE</td>
-								<td>2017/10/8</td>
-								<td>2017/10/10</td>
+								<td>PBNP5678</td>
+								<td>30/05/2019</td>
+								<td>30/05/2022</td>
 								<td>Finalizado</td>
 								<td>
 									<a href="#" class="btn btn-info">
 	  									<i class="fas fa-file-pdf"></i>	
 									</a>
 								</td>
-								<td>
-									<a href="reservation-update.html" class="btn btn-success">
-	  									<i class="fas fa-sync-alt"></i>	
-									</a>
-								</td>
-								<td>
-									<a href="payment.html" class="btn btn-info">
-	  									<i class="fas fa-dollar-sign"></i>	
-									</a>
-								</td>
-								<td>
-									<form action="">
-										<button type="button" class="btn btn-warning">
-		  									<i class="far fa-trash-alt"></i>
-										</button>
-									</form>
-								</td>
+								
 							</tr>
-							<tr class="text-center" >
+							<tr class="text-center tr-color" >
 								<td>3</td>
-								<td>NOMBRE CLIENTE</td>
-								<td>2017/10/8</td>
-								<td>2017/10/10</td>
+								<td>PBNP9101</td>
+								<td>30/05/2017</td>
+								<td>30/05/2018</td>
 								<td>Finalizado</td>
 								<td>
 									<a href="#" class="btn btn-info">
 	  									<i class="fas fa-file-pdf"></i>	
 									</a>
 								</td>
-								<td>
-									<a href="reservation-update.html" class="btn btn-success">
-	  									<i class="fas fa-sync-alt"></i>	
-									</a>
-								</td>
-								<td>
-									<a href="payment.html" class="btn btn-info">
-	  									<i class="fas fa-dollar-sign"></i>	
-									</a>
-								</td>
-								<td>
-									<form action="">
-										<button type="button" class="btn btn-warning">
-		  									<i class="far fa-trash-alt"></i>
-										</button>
-									</form>
-								</td>
+								
 							</tr>
-							<tr class="text-center" >
+							<tr class="text-center tr-color" >
 								<td>4</td>
-								<td>NOMBRE CLIENTE</td>
-								<td>2017/10/8</td>
-								<td>2017/10/10</td>
-								<td>Pendiente</td>
+								<td>PBNP1112</td>
+								<td>30/05/2010</td>
+								<td>30/05/2016</td>
+								<td>Finalizado</td>
 								<td>
 									<a href="#" class="btn btn-info">
 	  									<i class="fas fa-file-pdf"></i>	
 									</a>
 								</td>
-								<td>
-									<a href="reservation-update.html" class="btn btn-success">
-	  									<i class="fas fa-sync-alt"></i>	
-									</a>
-								</td>
-								<td>
-									<a href="payment.html" class="btn btn-info">
-	  									<i class="fas fa-dollar-sign"></i>	
-									</a>
-								</td>
-								<td>
-									<form action="">
-										<button type="button" class="btn btn-warning">
-		  									<i class="far fa-trash-alt"></i>
-										</button>
-									</form>
-								</td>
+								
 							</tr>
 						</tbody>
 					</table>
