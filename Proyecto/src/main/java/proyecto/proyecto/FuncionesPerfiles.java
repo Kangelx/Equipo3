@@ -13,21 +13,21 @@ import java.sql.SQLException;
  *
  * @author angel
  */
-public class FuncionesPerfil implements Repositorio<Perfil>{
+public class FuncionesPerfiles implements Repositorio<Perfiles>{
     
     private Connection getConnection() {
         return AccesoBaseDatos.getInstance().getConn();
     }
     
     @Override
-    public Perfil porId(int id) {
-        Perfil perfil = null;
-        String sql = "SELECT uuid, moroso, regimen,contraseña, situacionCivil,  FROM usuarios WHERE id=?";
+    public Perfiles porId(String uuid) {
+        Perfiles perfil = null;
+        String sql = "SELECT *  FROM usuarios WHERE uuid=?";
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
-            stmt.setInt(1, id);
+            stmt.setString(1, uuid);
             try ( ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
-                    perfil = new Perfil(rs.getInt("uuid"), rs.getString("contraseña"), );
+                    perfil = new Perfiles(rs.getString("usuario"), rs.getString("uuid"), rs.getString("contrasena"), GestionEnum.transSitCivil(rs.getString("situacionCivil")), GestionEnum.transSitLaboral(rs.getString("situacionLaboral")), rs.getBoolean("moroso"), rs.getBoolean("procesoJudicial"), rs.getString("uuidPareja"), GestionEnum.transRegimen(rs.getString("regimen")));
                 }
             }
             
@@ -35,25 +35,32 @@ public class FuncionesPerfil implements Repositorio<Perfil>{
             // errores
             System.out.println("SQLException: " + ex.getMessage());
         }
-        return usuario;
+        return perfil;
     }
     
     @Override
-    public void guardar(Usuario t) {
+    public void guardar(Perfiles p) {
         String sql = null;
-        if (porId(t.getId()) != null) {
-            sql = "UPDATE usuarios SET username=?,password=? , email=? WHERE id=?";
+        if (porId(p.getUuid()) != null) {
+            sql = "UPDATE Perfiles SET usuario=?, uuid=?, contrasena=?, situacionCivil=?, situacionLaboral=?, moroso=?, procesoJudicial=?, uuidPareja=?, regimen=? WHERE uuid=?";
         } else {
-            sql = "INSERT INTO usuarios(username, password, email) VALUES (?, md5(?), ?)";
+            sql = "INSERT INTO Perfiles(usuario, uuid, contrasena, situacionCivil, situacionLaboral, moroso, procesoJudicial, uuidPareja, regimen) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         }
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
             
-            if (porId(t.getId()) != null) {
-                stmt.setInt(4, t.getId());
+            if (porId(p.getUuid()) != null) {
+                stmt.setString(10, p.getUuid());
             }
-            stmt.setString(1, t.getUsername());
-            stmt.setString(2, t.getPassword());
-            stmt.setString(3, t.getEmail());
+            stmt.setString(1, p.getUsuario());
+            stmt.setString(2, p.getUuid());
+            stmt.setString(3, p.getContraseña());
+            stmt.setString(4, p.getSituacionCivil().name());
+            stmt.setString(5, p.getSituacionLaboral().name());
+            stmt.setString(6, String.valueOf(p.isMoroso()));
+            stmt.setString(7, String.valueOf(p.isProcesoJudicial()));
+            stmt.setString(8, p.getUuidPareja());
+            stmt.setString(9, p.getRegimen().name());
+            
             int salida = stmt.executeUpdate();
             if (salida != 1) {
                 throw new Exception(" No se ha insertado/modificado un solo registro");
@@ -70,10 +77,10 @@ public class FuncionesPerfil implements Repositorio<Perfil>{
     }
     
     @Override
-    public void eliminar(int id) {
-        String sql = "DELETE FROM usuarios WHERE id=?";
+    public void eliminar(String uuid) {
+        String sql = "DELETE FROM perfiles WHERE uuid=?";
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
-            stmt.setInt(1, id);
+            stmt.setString(1, uuid);
             int salida = stmt.executeUpdate();
             if (salida != 1) {
                 throw new Exception(" No se ha borrado un solo registro");

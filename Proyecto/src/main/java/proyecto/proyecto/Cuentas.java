@@ -11,45 +11,34 @@ import java.util.LinkedHashMap;
  *
  * @author DAM129
  */
-public class Cuenta implements Identificable{
-    private String idCliente;
+public class Cuentas implements Identificable {
+
     private String iban;
     private TipoCuenta tipoCuenta;
     private double saldo;
-    private double nominaUltimoMes;
-    private double mediaIngresos;
+    private double nominaUltimo;
+    private double nominaMedAnual;
 
-    public Cuenta(String idCliente, String iban, TipoCuenta tipoCuenta, double saldo, double nominaUltimoMes, double mediaIngresos) {
-        this.idCliente = idCliente;
+    public Cuentas(String iban, TipoCuenta tipoCuenta, double saldo, double nominaUltimoMes, double mediaIngresos) {
         this.iban = iban;
         this.tipoCuenta = tipoCuenta;
         this.saldo = saldo;
-        this.nominaUltimoMes = nominaUltimoMes;
-        this.mediaIngresos = mediaIngresos;
+        this.nominaUltimo = nominaUltimoMes;
+        this.nominaMedAnual = mediaIngresos;
     }
 
-    public Cuenta() {
+    public Cuentas() {
     }
-    
-    
+
     @Override
     public LinkedHashMap<String, String> datosObjeto() {
         LinkedHashMap<String, String> datos = new LinkedHashMap();
-        datos.put("idCliente", idCliente);
         datos.put("iban", iban);
         datos.put("tipoCuenta", tipoCuenta.name());
         datos.put("saldo", String.valueOf(saldo));
-        datos.put("nominaUltimoMes", String.valueOf(nominaUltimoMes));
-        datos.put("mediaIngresos", String.valueOf(mediaIngresos));
+        datos.put("nominaUltimo", String.valueOf(nominaUltimo));
+        datos.put("nominaMedAnual", String.valueOf(nominaMedAnual));
         return datos;
-    }
-
-    public String getIdCliente() {
-        return idCliente;
-    }
-
-    public void setIdCliente(String idCliente) {
-        this.idCliente = idCliente;
     }
 
     public String getIban() {
@@ -76,20 +65,20 @@ public class Cuenta implements Identificable{
         this.saldo = saldo;
     }
 
-    public double getNominaUltimoMes() {
-        return nominaUltimoMes;
+    public double getNominaUltimo() {
+        return nominaUltimo;
     }
 
-    public void setNominaUltimoMes(double nominaUltimoMes) {
-        this.nominaUltimoMes = nominaUltimoMes;
+    public void setNominaUltimo(double nominaUltimo) {
+        this.nominaUltimo = nominaUltimo;
     }
 
-    public double getMediaIngresos() {
-        return mediaIngresos;
+    public double getNominaMedAnual() {
+        return nominaMedAnual;
     }
 
-    public void setMediaIngresos(double mediaIngresos) {
-        this.mediaIngresos = mediaIngresos;
+    public void setNominaMedAnual(double nominaMedAnual) {
+        this.nominaMedAnual = nominaMedAnual;
     }
- 
+
 }

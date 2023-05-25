@@ -13,14 +13,14 @@ import java.sql.SQLException;
  *
  * @author angel
  */
-public class FuncionesPrestamo implements Repositorio<Prestamo>{
+public class FuncionesPrestamo implements Repositorio<Prestamos>{
     private Connection getConnection() {
         return AccesoBaseDatos.getInstance().getConn();
     }
     
     @Override
-    public Prestamo porId(int id) {
-        Prestamo prestamo = null;
+    public Prestamos porId(int id) {
+        Prestamos prestamo = null;
         String sql = "SELECT id, username, password, email FROM usuarios WHERE id=?";
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
             stmt.setInt(1, id);

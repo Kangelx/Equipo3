@@ -15,21 +15,21 @@ import java.sql.SQLException;
  *
  * @author angel
  */
-public class FuncionesCliente implements Repositorio<Cliente>{
+public class FuncionesClientes implements Repositorio<Clientes>{
     
     private Connection getConnection() {
         return AccesoBaseDatos.getInstance().getConn();
     }
     
     @Override
-    public Cliente porId(int id) {
-        Cliente cliente = null;
-        String sql = "SELECT uuid, dni, localidad, direccion, nombre, apellidos, telefono, fechaNacimiento FROM cliente WHERE uuid=?";
+    public Clientes porId(String uuid) {
+        Clientes cliente = null;
+        String sql = "SELECT uuid, dni, nombre, apellidos, telefono, direccion, localidad, fechaNac, iban FROM clientes WHERE uuid=?";
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
-            stmt.setInt(1, id);
+            stmt.setString(1, uuid);
             try ( ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
-                    cliente = new Cliente(rs.getInt("uuid"), rs.getString("dni"), rs.getString("nombre"), rs.getString("apellidos"), rs.getString("telefono"), rs.getString("direccion"), rs.getString("localidad"), rs.getDate(sql).toLocalDate());
+                    cliente = new Clientes(rs.getString("uuid"), rs.getString("dni"), rs.getString("nombre"), rs.getString("apellidos"), rs.getString("telefono"), rs.getString("direccion"), rs.getString("localidad"), rs.getDate("fechaNac").toLocalDate(), rs.getString("iban"));
                 }
             }
             
@@ -41,26 +41,28 @@ public class FuncionesCliente implements Repositorio<Cliente>{
     }
     
     @Override
-    public void guardar(Cliente c) {
+    public void guardar(Clientes c) {
         String sql = null;
-        if (porId(c.getId()) != null) {
-            sql = "UPDATE cliente SET dni=?,localidad=? , fechaNacimiento=? , apellidos=?, nombre=?, telefono=?, direccion=? WHERE uuid=?";
+        if (porId(c.getUuid() )!= null) {
+            sql = "UPDATE clientes SET uuid=?, dni=?, nombre=?, apellidos=?, telefono=?, direccion=?, localidad=?, fechaNac=?, iban=? WHERE uuid=?";
         } else {
-            sql = "INSERT INTO cliente(dni, localidad, fechaNacimiento, apellidos, nombre, telefono, direccion) VALUES (?,?,?,?,?,?,?)";
+            sql = "INSERT INTO clientes(uuid, dni, nombre, apellidos, telefono, direccion, localidad, fechaNac, iban) VALUES (?,?,?,?,?,?,?,?,?)";
         }
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
             
-            if (porId(c.getId()) != null) {
-                stmt.setInt(8, c.getId());
+            if (porId(c.getUuid()) != null) {
+                stmt.setString(10, c.getUuid());
             }
             
-            stmt.setString(1, c.getDni());
-            stmt.setString(2, c.getLocalidad());
-            stmt.setDate(3, Date.valueOf(c.getFechanac()));
+            stmt.setString(1, c.getUuid());
+            stmt.setString(2, c.getDni());
+            stmt.setString(3, c.getNombre());
             stmt.setString(4, c.getApellidos());
-            stmt.setString(5, c.getNombre());
-            stmt.setString(6, c.getTelefono());
-            stmt.setString(7, c.getDireccion());
+            stmt.setString(5, c.getTelefono());
+            stmt.setString(6, c.getDireccion());
+            stmt.setString(7, c.getLocalidad());
+            stmt.setDate(8, Date.valueOf(c.getFechaNac()));
+            stmt.setString(9, c.getIban());
             
             int salida = stmt.executeUpdate();
             if (salida != 1) {
@@ -78,10 +80,10 @@ public class FuncionesCliente implements Repositorio<Cliente>{
     }
     
     @Override
-    public void eliminar(int id) {
-        String sql = "DELETE FROM cliente WHERE uuid=?";
+    public void eliminar(String uuid) {
+        String sql = "DELETE FROM clientes WHERE uuid=?";
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
-            stmt.setInt(1, id);
+            stmt.setString(1, uuid);
             int salida = stmt.executeUpdate();
             if (salida != 1) {
                 throw new Exception(" No se ha borrado un solo registro");

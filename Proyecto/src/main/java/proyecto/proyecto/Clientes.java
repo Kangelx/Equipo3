@@ -12,37 +12,41 @@ import java.util.LinkedHashMap;
  *
  * @author DAM129
  */
-public class Cliente implements Identificable {
+public class Clientes implements Identificable {
 
-    private String id;
+    private String uuid;
     private String dni;
     private String nombre;
     private String apellidos;
     private String telefono;
     private String direccion;
     private String localidad;
-    private LocalDate fechanac;
+    private LocalDate fechaNac;
+    private String iban;
 
-    public Cliente(String id, String dni, String nombre, String apellidos, String telefono, String direccion, String localidad, LocalDate fechanac) {
-        this.id = id;
+    public Clientes(String uuid, String dni, String nombre, String apellidos, String telefono, String direccion, String localidad, LocalDate fechaNac, String iban) {
+        this.uuid = uuid;
         this.dni = dni;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.telefono = telefono;
         this.direccion = direccion;
         this.localidad = localidad;
-        this.fechanac = fechanac;
+        this.fechaNac = fechaNac;
+        this.iban = iban;
     }
 
-    public Cliente() {
+    
+
+    public Clientes() {
     }
 
-    public String getId() {
-        return id;
+    public String getUuid() {
+        return uuid;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public String getDni() {
@@ -93,26 +97,35 @@ public class Cliente implements Identificable {
         this.localidad = localidad;
     }
 
-    public LocalDate getFechanac() {
-        return fechanac;
+    public LocalDate getFechaNac() {
+        return fechaNac;
     }
 
-    public void setFechanac(LocalDate fechanac) {
-        this.fechanac = fechanac;
+    public void setFechaNac(LocalDate fechaNac) {
+        this.fechaNac = fechaNac;
+    }
+
+    public String getIban() {
+        return iban;
+    }
+
+    public void setIban(String iban) {
+        this.iban = iban;
     }
 
     @Override
     public LinkedHashMap<String, String> datosObjeto() {
         LinkedHashMap<String, String> datos = new LinkedHashMap();
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        datos.put("id", id);
+        datos.put("uuid", uuid);
         datos.put("dni", dni);
         datos.put("nombre", nombre);
         datos.put("apellidos", apellidos);
         datos.put("telefono", telefono);
         datos.put("direccion", direccion);
         datos.put("localidad", localidad);
-        datos.put("fechaNacimiento", fechanac.format(formato));
+        datos.put("fechaNac", fechaNac.format(formato));
+        datos.put("iban", iban);
         return datos;
     }
 

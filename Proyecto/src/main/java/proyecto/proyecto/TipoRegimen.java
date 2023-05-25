@@ -8,6 +8,6 @@ package proyecto.proyecto;
  *
  * @author DAM129
  */
-public enum EstadoSoli {
-    ESPERA, ACEPTADO, DENEGADO
+public enum TipoRegimen {
+    GANANCIALES, SEPARACION_DE_BIENES
 }
