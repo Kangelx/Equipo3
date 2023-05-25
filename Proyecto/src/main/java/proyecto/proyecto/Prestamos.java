@@ -24,8 +24,9 @@ public class Prestamos implements Identificable {
     private double cantidad;
     private LocalDate fechaFirma;
     private double cantMens;
+    private String uuid; //nuevo
 
-    public Prestamos(int idPres, int periodo, LocalDate fechaOfer, int plazo, double interes, double cantidad, LocalDate fechaFirma, double cantMens) {
+    public Prestamos(int idPres, int periodo, LocalDate fechaOfer, int plazo, double interes, double cantidad, LocalDate fechaFirma, double cantMens, String uuid) {
         this.idPres = idPres;
         this.periodo = periodo;
         this.fechaOfer = fechaOfer;
@@ -34,10 +35,20 @@ public class Prestamos implements Identificable {
         this.cantidad = cantidad;
         this.fechaFirma = fechaFirma;
         this.cantMens = cantMens;
+        this.uuid = uuid;
     }
 
     public Prestamos() {
     }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+    
 
     public int getIdPres() {
         return idPres;
@@ -114,6 +125,7 @@ public class Prestamos implements Identificable {
         datos.put("cantidad", String.valueOf(cantidad));
         datos.put("fechaFirma", fechaFirma.format(formato));
         datos.put("cantMens", String.valueOf(cantMens));
+        datos.put("uuid", uuid);
         return datos;
     }
 

@@ -5,29 +5,28 @@
 package proyecto.proyecto;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
  *
- * @author angel
+ * @author DAM129
  */
-public class FuncionesPrestamo implements Repositorio<Prestamos>{
+public class FuncionesMovimientos {
     private Connection getConnection() {
         return AccesoBaseDatos.getInstance().getConn();
     }
     
-    @Override
-    public Prestamos porId(String uuid) {
-        Prestamos prestamo = null;
-        String sql = "SELECT * FROM prestamos WHERE uuid=?";
+    
+    public Movimientos porId(int id) {
+        Movimientos movimiento = null;
+        String sql = "SELECT * FROM movimientos WHERE idOperacion=?";
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
-            stmt.setString(1, uuid);
+            stmt.setInt(1, id);
             try ( ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
-                    prestamo = new Prestamos(rs.getInt("idPres"), rs.getInt("periodo"), rs.getDate("fechaOfer").toLocalDate(), rs.getInt("plazo"), rs.getDouble("interes"), rs.getDouble("cantidad"), rs.getDate("fechaFirma").toLocalDate(), rs.getDouble("cantMens"), rs.getString("uuid"));
+                    movimiento = new Movimientos(rs.getInt("idOperacion"), rs.getDouble("cantidad"), rs.getString("concepto"), rs.getString("uuidDestinatario"), rs.getString("uuidEmisor"), rs.getString("iban"));
                 }
             }
             
@@ -35,32 +34,28 @@ public class FuncionesPrestamo implements Repositorio<Prestamos>{
             // errores
             System.out.println("SQLException: " + ex.getMessage());
         }
-        return prestamo;
+        return movimiento;
     }
     
-    @Override
-    public void guardar(Prestamos p) {
+    
+    public void guardar(Movimientos m) {
         String sql = null;
-        if (porId(p.getUuid()) != null) {
-            sql = "UPDATE prestamos SET idPres=?, periodo=?, fechaOfer=?, plazo=?, interes=?, cantidad=?, fechafirma=?, cantMens=?, uuid=? WHERE uuid=?";
+        if (porId(m.getIdOperacion()) != null) {
+            sql = "UPDATE usuarios SET idOperacion=?, cantidad=?, concepto=?, ibanDestinatario=?, ibanemisor=?, iban=? WHERE idOperacion=?";
         } else {
-            sql = "INSERT INTO prestamos(idPres, periodo, fechaOfer, plazo, interes, cantidad, fecaFirma, cantMens, uuid) VALUES (?, ? , ? , ? , ? , ? , ? , ? , ? )";
+            sql = "INSERT INTO usuarios(idOperacion, cantidad, concepto, ibanDestinatario, ibanEmisor, iban) VALUES (?, ?, ?, ?, ?, ?)";
         }
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
             
-            if (porId(p.getUuid()) != null) {
-                stmt.setString(10, p.getUuid());
+            if (porId(m.getIdOperacion()) != null) {
+                stmt.setInt(7, m.getIdOperacion());
             }
-            stmt.setInt(1, p.getIdPres());
-            stmt.setInt(2, p.getPeriodo());
-            stmt.setDate(3, Date.valueOf(p.getFechaOfer()));
-            stmt.setInt(4, p.getPlazo());
-            stmt.setDouble(5, p.getInteres());
-            stmt.setDouble(6, p.getCantidad());
-            stmt.setDate(7, Date.valueOf(p.getFechaFirma()));
-            stmt.setDouble(8, p.getCantMens());
-            stmt.setString(9, p.getUuid());
-            
+            stmt.setInt(1, m.getIdOperacion());
+            stmt.setDouble(2, m.getCantidad());
+            stmt.setString(3, m.getConcepto());
+            stmt.setString(4, m.getIbanDestinatario());
+            stmt.setString(5, m.getIbanEmisor());
+            stmt.setString(6, m.getIban());
             int salida = stmt.executeUpdate();
             if (salida != 1) {
                 throw new Exception(" No se ha insertado/modificado un solo registro");
@@ -76,11 +71,11 @@ public class FuncionesPrestamo implements Repositorio<Prestamos>{
         }
     }
     
-    @Override
-    public void eliminar(String uuid) {
-        String sql = "DELETE FROM prestamos WHERE uuid=?";
+    
+    public void eliminar(int id) {
+        String sql = "DELETE FROM movimientos WHERE idOperacion=?";
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
-            stmt.setString(1, uuid);
+            stmt.setInt(1, id);
             int salida = stmt.executeUpdate();
             if (salida != 1) {
                 throw new Exception(" No se ha borrado un solo registro");
@@ -93,5 +88,5 @@ public class FuncionesPrestamo implements Repositorio<Prestamos>{
         }
     }
     
-   
+    
 }

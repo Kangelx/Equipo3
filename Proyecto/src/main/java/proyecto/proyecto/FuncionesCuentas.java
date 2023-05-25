@@ -5,29 +5,28 @@
 package proyecto.proyecto;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
  *
- * @author angel
+ * @author DAM129
  */
-public class FuncionesPrestamo implements Repositorio<Prestamos>{
+public class FuncionesCuentas implements Repositorio<Cuentas>{
     private Connection getConnection() {
         return AccesoBaseDatos.getInstance().getConn();
     }
     
     @Override
-    public Prestamos porId(String uuid) {
-        Prestamos prestamo = null;
-        String sql = "SELECT * FROM prestamos WHERE uuid=?";
+    public Cuentas porId(String iban) {
+        Cuentas cuenta = null;
+        String sql = "SELECT * FROM cuentas WHERE iban=?";
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
-            stmt.setString(1, uuid);
+            stmt.setString(1, iban);
             try ( ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
-                    prestamo = new Prestamos(rs.getInt("idPres"), rs.getInt("periodo"), rs.getDate("fechaOfer").toLocalDate(), rs.getInt("plazo"), rs.getDouble("interes"), rs.getDouble("cantidad"), rs.getDate("fechaFirma").toLocalDate(), rs.getDouble("cantMens"), rs.getString("uuid"));
+                    cuenta = new Cuentas(rs.getString("iban"), GestionEnum.transTipoCuenta(rs.getString("tipoCuenta")), rs.getDouble("saldo"), rs.getDouble("nominaUltimo"), rs.getDouble("nominaMedAnual"));
                 }
             }
             
@@ -35,32 +34,27 @@ public class FuncionesPrestamo implements Repositorio<Prestamos>{
             // errores
             System.out.println("SQLException: " + ex.getMessage());
         }
-        return prestamo;
+        return cuenta;
     }
     
     @Override
-    public void guardar(Prestamos p) {
+    public void guardar(Cuentas c) {
         String sql = null;
-        if (porId(p.getUuid()) != null) {
-            sql = "UPDATE prestamos SET idPres=?, periodo=?, fechaOfer=?, plazo=?, interes=?, cantidad=?, fechafirma=?, cantMens=?, uuid=? WHERE uuid=?";
+        if (porId(c.getIban()) != null) {
+            sql = "UPDATE usuarios SET iban=?, tipocuenta=?, saldo=?, nominaUltimo=?, nominaMedAnual=? WHERE iban=?";
         } else {
-            sql = "INSERT INTO prestamos(idPres, periodo, fechaOfer, plazo, interes, cantidad, fecaFirma, cantMens, uuid) VALUES (?, ? , ? , ? , ? , ? , ? , ? , ? )";
+            sql = "INSERT INTO usuarios(iban, tipoCuenta, saldo, nominaUltimo, nominaMedAnual) VALUES (?,?,?,?,?)";
         }
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
             
-            if (porId(p.getUuid()) != null) {
-                stmt.setString(10, p.getUuid());
+            if (porId(c.getIban()) != null) {
+                stmt.setString(6, c.getIban());
             }
-            stmt.setInt(1, p.getIdPres());
-            stmt.setInt(2, p.getPeriodo());
-            stmt.setDate(3, Date.valueOf(p.getFechaOfer()));
-            stmt.setInt(4, p.getPlazo());
-            stmt.setDouble(5, p.getInteres());
-            stmt.setDouble(6, p.getCantidad());
-            stmt.setDate(7, Date.valueOf(p.getFechaFirma()));
-            stmt.setDouble(8, p.getCantMens());
-            stmt.setString(9, p.getUuid());
-            
+            stmt.setString(1, c.getIban());
+            stmt.setString(2, c.getTipoCuenta().name());
+            stmt.setDouble(3, c.getSaldo());
+            stmt.setDouble(4, c.getNominaUltimo());
+            stmt.setDouble(5, c.getNominaMedAnual());
             int salida = stmt.executeUpdate();
             if (salida != 1) {
                 throw new Exception(" No se ha insertado/modificado un solo registro");
@@ -77,10 +71,10 @@ public class FuncionesPrestamo implements Repositorio<Prestamos>{
     }
     
     @Override
-    public void eliminar(String uuid) {
-        String sql = "DELETE FROM prestamos WHERE uuid=?";
+    public void eliminar(String iban) {
+        String sql = "DELETE FROM cuentas WHERE iban=?";
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
-            stmt.setString(1, uuid);
+            stmt.setString(1, iban);
             int salida = stmt.executeUpdate();
             if (salida != 1) {
                 throw new Exception(" No se ha borrado un solo registro");
@@ -93,5 +87,5 @@ public class FuncionesPrestamo implements Repositorio<Prestamos>{
         }
     }
     
-   
+    
 }

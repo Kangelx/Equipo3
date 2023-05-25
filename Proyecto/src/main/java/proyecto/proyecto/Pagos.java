@@ -17,14 +17,24 @@ public class Pagos implements Identificable {
     private int idPago;
     private LocalDate fecha;
     private double cantidad;
+    private int idPres; 
     
-    public Pagos(int idPago, LocalDate fecha, double cantidad) {
+    public Pagos(int idPago, LocalDate fecha, double cantidad, int idPres) {
         this.idPago = idPago;
         this.fecha = fecha;
         this.cantidad = cantidad;
+        this.idPres = idPres;
     }
     
     public Pagos() {
+    }
+
+    public int getIdPres() {
+        return idPres;
+    }
+
+    public void setIdPres(int idPres) {
+        this.idPres = idPres;
     }
     
     public int getIdPago() {

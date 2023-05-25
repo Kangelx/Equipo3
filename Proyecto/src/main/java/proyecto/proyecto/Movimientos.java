@@ -16,16 +16,16 @@ public class Movimientos implements Identificable {
     private int idOperacion;
     private double cantidad;
     private String concepto;
-    private String uuidDestinatario;
-    private String uuidEmisor;
+    private String ibanDestinatario;
+    private String ibanEmisor;
     private String iban;
 
     public Movimientos(int idOperacion, double cantidad, String concepto, String uuidDestinatario, String uuidEmisor, String iban) {
         this.idOperacion = idOperacion;
         this.cantidad = cantidad;
         this.concepto = concepto;
-        this.uuidDestinatario = uuidDestinatario;
-        this.uuidEmisor = uuidEmisor;
+        this.ibanDestinatario = uuidDestinatario;
+        this.ibanEmisor = uuidEmisor;
         this.iban = iban;
     }
 
@@ -38,8 +38,8 @@ public class Movimientos implements Identificable {
         datos.put("idOperacion", String.valueOf(idOperacion));
         datos.put("cantidad", String.valueOf(cantidad));
         datos.put("concepto", concepto);
-        datos.put("uuidDestinatario", uuidDestinatario);
-        datos.put("uuidEmisor", uuidEmisor);
+        datos.put("ibanDestinatario", ibanDestinatario);
+        datos.put("ibanEmisor", ibanEmisor);
         datos.put("iban", iban);
         return datos;
     }
@@ -68,20 +68,20 @@ public class Movimientos implements Identificable {
         this.concepto = concepto;
     }
 
-    public String getUuidDestinatario() {
-        return uuidDestinatario;
+    public String getIbanDestinatario() {
+        return ibanDestinatario;
     }
 
-    public void setUuidDestinatario(String uuidDestinatario) {
-        this.uuidDestinatario = uuidDestinatario;
+    public void setIbanDestinatario(String ibanDestinatario) {
+        this.ibanDestinatario = ibanDestinatario;
     }
 
-    public String getUuidEmisor() {
-        return uuidEmisor;
+    public String getIbanEmisor() {
+        return ibanEmisor;
     }
 
-    public void setUuidEmisor(String uuidEmisor) {
-        this.uuidEmisor = uuidEmisor;
+    public void setIbanEmisor(String ibanEmisor) {
+        this.ibanEmisor = ibanEmisor;
     }
 
     public String getIban() {

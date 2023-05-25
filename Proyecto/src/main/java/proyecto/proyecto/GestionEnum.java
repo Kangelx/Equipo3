@@ -41,10 +41,20 @@ public class GestionEnum {
     // GANANCIALES SEPARACION_DE_BIENES
     public static TipoRegimen transRegimen(String entrada){
         TipoRegimen salida = null;
-        if (entrada.equalsIgnoreCase("")){
+        if (entrada.equalsIgnoreCase("gananciales")){
             salida = TipoRegimen.GANANCIALES;
         }else{
             salida = TipoRegimen.SEPARACION_DE_BIENES;
+        }
+        return salida;
+    }
+    
+    public static TipoCuenta transTipoCuenta(String entrada){
+        TipoCuenta salida;
+        if ( entrada.equalsIgnoreCase("")){
+            salida = TipoCuenta.AHORRO;
+        }else{
+            salida = TipoCuenta.CORRIENTE;
         }
         return salida;
     }
