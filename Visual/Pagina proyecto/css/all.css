@@ -33,6 +33,12 @@
   color:white;
   
 }
+.contacto{
+  color:white;
+}
+a.contacto:hover{
+  color:lightblue;
+}
 .container-fluid {
   padding-left: 15px;
   padding-right: 15px;
