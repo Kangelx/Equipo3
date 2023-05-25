@@ -37,34 +37,56 @@ DIA 2
 
 
 Hemos realizados el diagrama E-R de Base de Datos.
+
 Hemos realizados el diagrama relacional de Base de Datos.
+
 Hoy nos vamos a dedicar a hacer el desarrollo de la página web en visual code mediante un documento HTML.
+
 Vamos a realizar el diagrama de casos de uso, de secuencia y de clases.
+
 Vamos a configurar el servidor para que se puedan conectar las dos máquinas y no haya fallos.
+
 Realizaremos la estructura java con los métodos necesarios.
+
 Comenzaremos con la creacción de la Base de datos teniendo en cuenta los diagramas creados.
+
+Reunión al finalizar:
+
 Aingeru se ha incoroporado y se le ha asignado de ayudante en la página web.
+
 Hemos realizado el diagrama de clases y casos de uso.
+
 Hemos creada la página de inicio y una pestaña para registrar nuevos usuarios en XHTML.
+
 Se ha  inicializado la estructura  de java.
+
 Han surgido muchos problemas organizativos a la hora de adaptar el diseño de la base de datos con programación y el diseño de clases.
 
 DIA 3
 
 
 Se han hecho cambios y pulido el diagrama E-R y relaciona
+
 Se han creado las tablas, establecido las FK, PK y UK de la base de datos. 
+
 Se han insertado datos en la base de datos para ir trabajando con algo.
+
 Se ha mejorado la estructura de programación.
+
 Se ha creado el servidor.
 
 Objetivos de hoy:
+
 Probar el servidor, conectarlo a la base de datos.
+
 Todas las funciones de las clases de java.
+
 Crear procedimiento y triggers en la base de datos.
+
 Diagramas de secuencia.
 
 Reunión al finalizar:
+
 Se han perfeccionado los diagramas E-R y relacional debido a que se han introducido cambios y se han ajustado las relaciones y tablas para simplificar el trabajo a la hora de programar.
 Se han relizado todos los diagramas secuenciales.
 Se han hecho modificaciones en el diagrama de clases y casos de uso.
@@ -87,6 +109,8 @@ Continuaremos haciendo la página web.
 Acabaremos el esquema de clase.
 Pasar los cambios hechos en la base de datos a Java.
 Comenzar con ventanas en Java.
+
+Reunión al finalizar:
 
 Hemos añadido eventos a la base de datos.
 Modificado y añadido algunas columnas a la base de datos.
