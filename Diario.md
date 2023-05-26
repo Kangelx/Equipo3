@@ -90,4 +90,24 @@ La base de datos está acabada, falta añadir funcionalidades extra. Se ha modif
 
 Hemos añadido eventos a la base de datos. Modificado y añadido algunas columnas a la base de datos. Hemos empezado a realizar los métodos que van a interactuar con las ventanas. Hemos acabado el esquema de las clases. Diseñado la estructura general de las ventanas. Se ha ampliado la página web, añadiendo una página de inicio. Se han mejorado los formularios.
 
+
+DIA 5
+
+Se ha hecho un pequeño ajuste en la base de datos.
+Se ha añadido un evento.
+
+Qué vamos a hacer hoy:
+
+Juntar ventanas con la aplicación y comprobar que es funcional.
+Añadir el esquema de casos de uso y revisar el de clases.
+Acabar los métodos para las ventanas.
+Implementar la base de datos en el servidor.
+Terminaremos la página web.
+Continuar con el MarkDown.
+
+Implementado la página web y la base de datos en el servidor y hemos comprobado que se puede acceder des de otra maquina al servidor web y a la base de datos. Hemos terminado la pagina web y hemos empezado la documentación en markdown.
+Se ha realizado el diagrama de casos de uso, se ha realizado la descripción de casos de uso, se ha realizado la base de datos correctamente completamente funcional.
+Por la parte de programación, se ha finalizado la parte de métodos y hemos añadido mas ventanas, añadir formularios y perfeccionado la portada.
+
+
 [Readme](README.md)
