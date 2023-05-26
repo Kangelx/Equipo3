@@ -62,7 +62,6 @@ public class MetodosAplicacion {
 
     //ESTE METODO UTILIZA DOS METODOS A PARTE: CALCULOPRESTAMO Y LIMPIO
     public double ofrecePrestamo(String uuid) {
-        boolean realiza = true;
         double prestamo = 0;
         FuncionesPerfiles perfiles = new FuncionesPerfiles();
         FuncionesClientes clientes = new FuncionesClientes();
