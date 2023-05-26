@@ -4,6 +4,9 @@
  */
 package proyecto.proyecto;
 
+import java.time.LocalDate;
+import java.util.Random;
+
 /**
  *
  * @author DAM129
@@ -61,11 +64,15 @@ public class MetodosAplicacion {
     }
 
     //ESTE METODO UTILIZA DOS METODOS A PARTE: CALCULOPRESTAMO Y LIMPIO
-    public double ofrecePrestamo(String uuid) {
+    public double ofrecePrestamo(String uuid, int periodo, int plazo, double interes) {
+        //CALCULO DE PRESTAMO
         double prestamo = 0;
         FuncionesPerfiles perfiles = new FuncionesPerfiles();
         FuncionesClientes clientes = new FuncionesClientes();
         FuncionesCuentas cuentas = new FuncionesCuentas();
+        FuncionesPrestamo prestamos = new FuncionesPrestamo();
+        Random r = new Random();
+        Prestamos p;
         Perfiles perfil = perfiles.porId(uuid);
         Cuentas cuenta = cuentas.porId(clientes.porId(uuid).getIban());
         if (limpio(uuid) == 1) {//si no cobra, comprueba si tiene pareja y si la pareja puede recibir prestamo, si es asi, lo hace a nombre de la pareja
@@ -81,7 +88,12 @@ public class MetodosAplicacion {
                 prestamo = calculoPrestamo(cuenta);
             }
         }
-
+        
+        //INSERCION EN TABLA PRESTAMOS
+        double cantidadMensual= ((prestamo/periodo)+8*prestamo/100);
+        p = new Prestamos(0, periodo, LocalDate.now(), plazo, interes, prestamo, null,cantidadMensual , uuid);
+        prestamos.guardar(p);
+        
         return prestamo;
     }
 }
