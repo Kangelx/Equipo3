@@ -1,123 +1,33 @@
 # Equipo3
-Proyecto
 
+## Proyecto equipo 3 
+### "Pablo Sainz, Alejandro Peñil, Angel Garcia, Adrian de Diego, Aingeru Arranz, Tania Chocan"
 
-DIA 1
+---
 
+![logo](Imagenes/logo.png)
 
-Tareas:
-Dividir las tareas entre los miembros.
-Vamos a crear y configurar el repositorio de GitHub, dando permisos a todos los miembros del grupo, creacción de las ramas,etc.
+Nuestro equipo ha desarrollado una sorprendente aplicación basada en ventanas en Java, diseñada y construida con el propósito de resolver los desafíos más exigentes de nuestra consultoría bancaria. Además, hemos creado una robusta base de datos utilizando un diagrama relacional y un conjunto de instrucciones SQL para garantizar el almacenamiento seguro y confiable de toda la información de la aplicación. Para dar forma a nuestro proyecto, hemos empleado herramientas de diseño de UML, lo que nos ha permitido crear diagramas de casos de uso, de secuencia y de clases. Esto ha sido fundamental para comprender y visualizar la estructura y el flujo del sistema, garantizando una implementación coherente y fluida.
+Y eso no es todo. Como parte de nuestra visión de ofrecer una experiencia completa, hemos diseñado una página web con XHTML cautivadora. Esta página web tiene como objetivo promocionar el préstamo inmediato para nuestros clientes solventes, brindándoles una interfaz amigable y accesible para explorar todas las ventajas que ofrecemos. En resumen, nuestro proyecto se basa en una aplicación de consultoría bancaria poderosa y eficiente, respaldada por una base de datos sólida, una cuidadosa planificación de casos de uso y diagramas UML, y una página web atractiva para comunicarnos y atender a nuestros valiosos clientes.
 
-También vamos a diseñar el proyecto, de forma general.
+  - [Programación](Programaci%C3%B3n.md)
+  
+Hemos desarrollado el programa basado en los diagramas realizados previamente.
 
-Estamos teniendo problemas a la hora de subir cambios al repositorio de GitHub.
+  - [Bases_de_datos](Bases.md)
 
-Pasaremos a desarrollar el diagrama de clases, para transportarla a la base de datos e implementarla en JAVA y diagrama UML.
+Se ha diseñado diagrama entidad-relacion y se ha implementado en la creacion de la base de datos.
 
-Hemos resuelto el problema de GitHub y están divididas las tareas y funciones, se ha creado el repositorio común satisfactoriamente, así como las ramas de cada asignatura.
+  - [Entornos_de_Desarrollo](Entornos.md)
 
-El resultado de las funciones es:
+Hemos realizado los diagramas de secuencia, de casos de uso y de clases para la organización y facilitación de la creacion de la base de datos y el programa en java.
 
-Pablo Sáinz Luque creará la Base de Datos.
+  - [Sistemas_informáticos](Servidor.md)
 
-Adrián De Diego Fernandez se encargará de la realización de la página web en XHTML.
+Hemos creado una infraestructura cliente-servidor segura, desde la que los usuarios pueden acceder a su cuenta del banco y solicitar nuestro nuevo prestamo o ver sus movimientos. Ademas los trabajadores pueden conectarse al servidor para acceder a la base de datos para realizar las gestiones pertinentes.
 
-Alejandro Peñil Haya establecerá el servidor y realizará el documento MarkDown .
+  - [Lenguajes_de_marcas](Marcas.md)
+  
+Hemos diseñado un bonita pagina web, desde la cual los usuarios pueden conectarse con su mundo financiero, para explorar sus movimientos, llevar a cabo sus gestiones bancarias o solicitar nuestros nuevos prestamos para clientes solventes.
 
-Tania Chocán Alexandre  se encargará de Entorno de Desarrollos.
-
-Ángel García García realizará el apartado de Progamación.
-
-Todo esto es de de carácter orientativo y puede ser susceptible al cambio en base a cómo se desenvuelva el día a día. Asímismo, estamos dispuesto a ayudarnos unos a otros en lo que haga falta.
-
-
-
-DIA 2
-
-
-Hemos realizados el diagrama E-R de Base de Datos.
-
-Hemos realizados el diagrama relacional de Base de Datos.
-
-Hoy nos vamos a dedicar a hacer el desarrollo de la página web en visual code mediante un documento HTML.
-
-Vamos a realizar el diagrama de casos de uso, de secuencia y de clases.
-
-Vamos a configurar el servidor para que se puedan conectar las dos máquinas y no haya fallos.
-
-Realizaremos la estructura java con los métodos necesarios.
-
-Comenzaremos con la creacción de la Base de datos teniendo en cuenta los diagramas creados.
-
-Reunión al finalizar:
-
-Aingeru se ha incoroporado y se le ha asignado de ayudante en la página web.
-
-Hemos realizado el diagrama de clases y casos de uso.
-
-Hemos creada la página de inicio y una pestaña para registrar nuevos usuarios en XHTML.
-
-Se ha  inicializado la estructura  de java.
-
-Han surgido muchos problemas organizativos a la hora de adaptar el diseño de la base de datos con programación y el diseño de clases.
-
-DIA 3
-
-
-Se han hecho cambios y pulido el diagrama E-R y relaciona
-
-Se han creado las tablas, establecido las FK, PK y UK de la base de datos. 
-
-Se han insertado datos en la base de datos para ir trabajando con algo.
-
-Se ha mejorado la estructura de programación.
-
-Se ha creado el servidor.
-
-Objetivos de hoy:
-
-Probar el servidor, conectarlo a la base de datos.
-
-Todas las funciones de las clases de java.
-
-Crear procedimiento y triggers en la base de datos.
-
-Diagramas de secuencia.
-
-Reunión al finalizar:
-
-Se han perfeccionado los diagramas E-R y relacional debido a que se han introducido cambios y se han ajustado las relaciones y tablas para simplificar el trabajo a la hora de programar.
-Se han relizado todos los diagramas secuenciales.
-Se han hecho modificaciones en el diagrama de clases y casos de uso.
-Hemos empezado con las funciones entre Java y SQL.
-Hemos comprobado  la funcionalidad del servidor con la base de datos y la página web.
-Seguimos desarrollando la página web añadiendo formularios, enlaces a otras páginas.
-
-Ha sido un día muy productivo, hemos empezado a coger velocidad.
-
-
-DIA 4
-
-
-La base de datos está acabada, falta añadir funcionalidades extra.
-Se ha modificado algunos atributos en la base de datos y se ha modificado una relación para que sea  más facil de programar.
-Se han insertado todos los datos en la base de datos.
-Se ha realizado el documento 
-Hoy nos vamos a dedicar a añadir triggers y procedimientos a la base de datos.
-Continuaremos haciendo la página web.
-Acabaremos el esquema de clase.
-Pasar los cambios hechos en la base de datos a Java.
-Comenzar con ventanas en Java.
-
-Reunión al finalizar:
-
-Hemos añadido eventos a la base de datos.
-Modificado y añadido algunas columnas a la base de datos.
-Hemos empezado a realizar los métodos que van a interactuar con las ventanas.
-Hemos acabado el esquema de las clases.
-Diseñado la estructura general de las ventanas.
-Se ha ampliado la página web, añadiendo una página de inicio.
-Se han mejorado los formularios.
-
-
+[Diario](Diario.md)
