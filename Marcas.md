@@ -68,7 +68,7 @@ Aqui os dejo un ejemplo de un trozo de codigo de esta pagina con sus respectivos
 }
 ``` 
 
-![ejemplo1](Imagenes/ejemplo1 .png)
+![ejemplo1](Imagenes/ejemplo1.png)
 
 Una vez entremos en en login veremos un cuadro de inicio de sesion en el que nos pediran DNI y contraseña del contacto , junto con las opciones de inciar sesion y la de crear nuevo usuario.Seguido muestro el codigo que hemos necesitado para hacer el cuadro de inicio de sesion:
 
