@@ -99,16 +99,16 @@ Una vez entremos en en login veremos un cuadro de inicio de sesion en el que nos
 	</div>
     
 ``` 
-![ejemplo2](imagenes/ejemplo2.png)
+![ejemplo2](Imagenes/ejemplo2.png)
 
 
 Una vez apretemos el boton de "INICIO SESION" entraremos al home de nuestra pagina web que tendra este aspecto en el cual podremos movernos por un menu lateral o un menu intuitivo de logos :
 
-![ejemplo3](imagenes/Ejemplo3.png)
+![ejemplo3](Imagenes/Ejemplo3.png)
 
 
 Os dejo seguidamente como seria una de las interfaces llamada NUEVO PRESTAMO para que veais el ejmeplo de como seria moverse por cada uno de las interfaces de la pagina.
 
-![ejemplo4](imagenes/Ejemplo4.png)
+![ejemplo4](Imagenes/Ejemplo4.png)
 
 [Readme](README.md)
