@@ -237,6 +237,19 @@ table form{
 	transition: all .2s ease-in-out;
 	
 }
+
+.anuncio{
+	
+	
+	position: absolute;
+	top: 150px;
+	left: 10px;
+	z-index: 1;transition: all .2s ease-in-out;
+	
+
+	
+    
+  }
 /*  Nav Lateral */
 .nav-lateral{
 	width: 300px;
@@ -245,6 +258,7 @@ table form{
 	left: 0;
 	z-index: 1;
 	transition: all .2s ease-in-out;
+	
 	background-image: url('../assets/img/nav-font.jpg');
 	background-position: center center;
 	background-size: cover;
