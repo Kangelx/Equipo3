@@ -21,7 +21,7 @@ Consultar préstamos ofrecidos: se introduce el uuid del cliente y se muestran l
 
 Consultar estado de préstamos: se introduce el iban de una cuenta y se muestra el estado de los préstamos asociados a ese iban.
 
-Banquero:
+### Banquero:
 
 Registrar usuario: se piden los datos del usuario: uuid,dni,nombre,apellidos,teléfono,dirección,localidad,fechaNac,iban.
 
