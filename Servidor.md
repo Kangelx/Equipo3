@@ -1,12 +1,12 @@
 # Servidor
-He instralado y configurado el servidor y le he conectado la maquina virtual windows 10.
+He instalado y configurado el servidor y le he conectado la maquina virtual windows 10.
 
 
 Esta es la configuracion del servidor.
 
 ![servidor](Imagenes/serverconf.png "ServerConf")
 
-He descargado el IIS de windows y asi es como se ve la pagina desde la maquina de windows 10
+He descargado el IIS de windows y así es como se ve la pagina desde la maquina de windows 10
 despues de hacer unaos cambios a modo de comprobacion.
 
 ![pruebapag](Imagenes/Conexion.png "Conexion")
@@ -21,7 +21,7 @@ Durante la configuración de XAMPP tuve problemas con la asignación de puertos.
 
 ![docXampp](Imagenes/docXampp.png "docXamp")
 
-Ademas tambien e implementado la base de datos en el servidor.
+Además tambien e implementado la base de datos en el servidor.
 
 ![sql](Imagenes/sql.png "SQL")
 
@@ -29,7 +29,7 @@ Para que las dos maquinas puedan verse he añadido una excepcion en el puerto 80
 
 ![8080](Imagenes/8080.png)
 
-Tambien he añadido en el archivo hosts de la maquina virtual windows 10 un nombre relacionado con la ip del servidor.
+También he añadido en el archivo hosts de la maquina virtual windows 10 un nombre relacionado con la ip del servidor.
 
 ![hosts](Imagenes/hosts.png)
 
