@@ -44,7 +44,7 @@ Comenzaremos con la creacción de la Base de datos teniendo en cuenta los diagra
 
 ### Reunión al finalizar:
 
-Aingeru se ha incoroporado y se le ha asignado de ayudante en la página web.
+Aingeru se ha incorporado y se le ha asignado de ayudante en la página web.
 
 Hemos realizado el diagrama de clases y casos de uso.
 
