@@ -2,7 +2,7 @@
 
 ---
 
-En entorno de desarrollo hemos diseñado los diagramas de casos de uso, de sequencia y de clases.
+En entorno de desarrollo hemos diseñado los diagramas de casos de uso, de sequencia y de clases. Ademas hemos hecho la documentacion del proyecto en documentos de markdown y hemos estado trabajando con un repositorio en remoto en GitHub.
 
 [Casos de uso](##casos_de_uso)
 
