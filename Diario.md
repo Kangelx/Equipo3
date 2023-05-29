@@ -104,12 +104,25 @@ Comenzar con ventanas en Java.
 
 ### Reunión al finalizar:
 
-Hemos añadido eventos a la base de datos. Modificado y añadido algunas columnas a la base de datos. Hemos empezado a realizar los métodos que van a interactuar con las ventanas. Hemos acabado el esquema de las clases. Diseñado la estructura general de las ventanas. Se ha ampliado la página web, añadiendo una página de inicio. Se han mejorado los formularios.
+Hemos añadido eventos a la base de datos.
+
+Modificado y añadido algunas columnas a la base de datos. 
+
+Hemos empezado a realizar los métodos que van a interactuar con las ventanas.
+
+Hemos acabado el esquema de las clases.
+
+Diseñado la estructura general de las ventanas. 
+
+Se ha ampliado la página web, añadiendo una página de inicio.
+
+Se han mejorado los formularios.
 
 
 ## DIA 5
 
 Se ha hecho un pequeño ajuste en la base de datos.
+
 Se ha añadido un evento.
 
 Qué vamos a hacer hoy:
@@ -126,9 +139,17 @@ Terminaremos la página web.
 
 Continuar con el MarkDown.
 
-Implementado la página web y la base de datos en el servidor y hemos comprobado que se puede acceder des de otra maquina al servidor web y a la base de datos. Hemos terminado la pagina web y hemos empezado la documentación en markdown.
+### REUNION AL FINALIZAR
 
-Se ha realizado el diagrama de casos de uso, se ha realizado la descripción de casos de uso, se ha realizado la base de datos correctamente completamente funcional.
+Implementado la página web y la base de datos en el servidor y hemos comprobado que se puede acceder des de otra maquina al servidor web y a la base de datos.
+
+Hemos terminado la pagina web y hemos empezado la documentación en markdown.
+
+Se ha realizado el diagrama de casos de uso. 
+
+Se ha realizado la descripción de casos de uso. 
+
+Se ha realizado la base de datos correctamente completamente funcional.
 
 Por la parte de programación, se ha finalizado la parte de métodos y hemos añadido mas ventanas, añadir formularios y perfeccionado la portada.
 
