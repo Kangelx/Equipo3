@@ -206,12 +206,18 @@ Flujo básico:
 	
 -Post-condición: se crea un nuevo préstamo.
 
-## Diagrama de clases:
+## Diagramas Secuenciales:
 
-El Diagrama de Clases, recoge el proceso desde que se hace una petición por parte del actor hasta que se realiza la petición o surge un error.
+Los Diagramas Secuenciales recogen el proceso desde que se solicita una petición por parte del actor hasta que se realiza la petición o surge un error.
 
 En nuestro proyecto, recogemos 6 escenarios que están represetandos en el siguiente Diagrama:
 
 [Diagramas Secuenciales](https://github.com/Kangelx/Equipo3/blob/master/Imagenes/DIAGRAMAS%20SECUENCIALES.drawio.png)
+
+## Diagrama de Clases
+
+En los Diagramas de Clases hemos plasmado cómo interactúan las clases entre sí y qué métodos y atributos las componen.
+
+[Diagrama de Clases](https://github.com/Kangelx/Equipo3/blob/master/Imagenes/DiagramaClases.drawio.png)
 
 [Readme](README.md)
