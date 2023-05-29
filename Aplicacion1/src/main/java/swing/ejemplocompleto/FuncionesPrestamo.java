@@ -9,6 +9,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,20 +17,24 @@ import java.util.List;
  *
  * @author angel
  */
-public class FuncionesPrestamo implements Repositorio<Prestamos>{
+public class FuncionesPrestamo{
     private Connection getConnection() {
         return AccesoBaseDatos.getInstance().getConn();
     }
     
-    @Override
-    public Prestamos porId(String idPres) {
+
+    public Prestamos porId(int idPres) {
+        LocalDate fechaFirma=null;
         Prestamos prestamo = null;
         String sql = "SELECT * FROM prestamos WHERE idPres=?";
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
-            stmt.setString(1, idPres);
+            stmt.setInt(1, idPres);
             try ( ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
-                    prestamo = new Prestamos(rs.getInt("idPres"), rs.getInt("periodo"), rs.getDate("fechaOfer").toLocalDate(), rs.getInt("plazo"), rs.getDouble("interes"), rs.getDouble("cantidad"), rs.getDate("fechaFirma").toLocalDate(), rs.getDouble("cantMens"), rs.getString("uuid"));
+                    if (rs.getDate("fechaFirma")!=null){
+                    fechaFirma = rs.getDate("fechaFirma").toLocalDate();   
+                    }
+                    prestamo = new Prestamos(rs.getInt("idPres"), rs.getInt("periodo"), rs.getDate("fechaOfer").toLocalDate(), rs.getInt("plazo"), rs.getDouble("interes"), rs.getDouble("cantidad"), fechaFirma, rs.getDouble("cantMens"), rs.getString("uuid"));
                 }
             }
             
@@ -40,18 +45,18 @@ public class FuncionesPrestamo implements Repositorio<Prestamos>{
         return prestamo;
     }
     
-    @Override
+
     public boolean guardar(Prestamos p) {
         boolean realizado=false;//BOOLEANO PARA VENTANAS
         String sql = null;
-        if (porId(p.getUuid()) != null) {
+        if (porId(p.getIdPres()) !=null) {
             sql = "UPDATE prestamos SET periodo=?, fechaOfer=?, plazo=?, interes=?, cantidad=?, fechafirma=?, cantMens=?, uuid=? WHERE idPres=?";
         } else {
-            sql = "INSERT INTO prestamos( periodo, fechaOfer, plazo, interes, cantidad, fecaFirma, cantMens, uuid) VALUES ( ? , ? , ? , ? , ? , ? , ? , ? )";
+            sql = "INSERT INTO prestamos( periodo, fechaOfer, plazo, interes, cantidad, fechaFirma, cantMens, uuid) VALUES ( ? , ? , ? , ? , ? , ? , ? , ? )";
         }
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
             
-            if (porId(p.getUuid()) != null) {
+            if (porId(p.getIdPres()) != null) {
                 stmt.setInt(9, p.getIdPres());
             }
             stmt.setInt(1, p.getPeriodo());
@@ -79,7 +84,7 @@ public class FuncionesPrestamo implements Repositorio<Prestamos>{
         return realizado;
     }
     
-    @Override
+
     public boolean eliminar(String idPres) {
         boolean realizado=false;//BOOLEANO PARA VENTANAS
         String sql = "DELETE FROM prestamos WHERE idPres=?";
@@ -99,15 +104,20 @@ public class FuncionesPrestamo implements Repositorio<Prestamos>{
         return realizado;
     }
     
-   public List listar(String idPres) {
+   public List listar(String uuid) {
        List<Prestamos> lista = new ArrayList();
         Prestamos prestamo = null;
-        String sql = "SELECT * FROM prestamos WHERE idPres=?";
+        LocalDate fechaFirma=null;
+        String sql = "SELECT * FROM prestamos WHERE uuid=?";
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
-            stmt.setString(1, idPres);
+            stmt.setString(1, uuid);
             try ( ResultSet rs = stmt.executeQuery();) {
                 while (rs.next()) {
-                    prestamo = new Prestamos(rs.getInt("idPres"), rs.getInt("periodo"), rs.getDate("fechaOfer").toLocalDate(), rs.getInt("plazo"), rs.getDouble("interes"), rs.getDouble("cantidad"), rs.getDate("fechaFirma").toLocalDate(), rs.getDouble("cantMens"), rs.getString("uuid"));
+                    if (rs.getDate("fechaFirma")!=null){
+                    fechaFirma = rs.getDate("fechaFirma").toLocalDate();   
+                    }
+                   
+                    prestamo = new Prestamos(rs.getInt("idPres"), rs.getInt("periodo"), rs.getDate("fechaOfer").toLocalDate(), rs.getInt("plazo"), rs.getDouble("interes"), rs.getDouble("cantidad"), fechaFirma, rs.getDouble("cantMens"), rs.getString("uuid"));
                     lista.add(prestamo);
                 }
             }
@@ -119,15 +129,43 @@ public class FuncionesPrestamo implements Repositorio<Prestamos>{
         return lista;
     }
    
-   public List listarAceptados(String idPres) {
+   public List listarAceptados(String uuid) {
+       LocalDate fechaFirma=null;
        List<Prestamos> lista = new ArrayList();
         Prestamos prestamo = null;
-        String sql = "SELECT * FROM prestamos WHERE idPres=? and fechaFirma is not null";
+        String sql = "SELECT * FROM prestamos WHERE uuid=? and fechaFirma is not null";
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
-            stmt.setString(1, idPres);
+            stmt.setString(1, uuid);
             try ( ResultSet rs = stmt.executeQuery();) {
                 while (rs.next()) {
-                    prestamo = new Prestamos(rs.getInt("idPres"), rs.getInt("periodo"), rs.getDate("fechaOfer").toLocalDate(), rs.getInt("plazo"), rs.getDouble("interes"), rs.getDouble("cantidad"), rs.getDate("fechaFirma").toLocalDate(), rs.getDouble("cantMens"), rs.getString("uuid"));
+                    if (rs.getDate("fechaFirma")!=null){
+                    fechaFirma = rs.getDate("fechaFirma").toLocalDate();   
+                    }
+                    prestamo = new Prestamos(rs.getInt("idPres"), rs.getInt("periodo"), rs.getDate("fechaOfer").toLocalDate(), rs.getInt("plazo"), rs.getDouble("interes"), rs.getDouble("cantidad"), fechaFirma, rs.getDouble("cantMens"), rs.getString("uuid"));
+                    lista.add(prestamo);
+                }
+            }
+            
+        } catch (SQLException ex) {
+            // errores
+            System.out.println("SQLException: " + ex.getMessage());
+        }
+        return lista;
+    }
+   
+    public List listarNoAceptados(String uuid) {
+        LocalDate fechaFirma=null;
+       List<Prestamos> lista = new ArrayList();
+        Prestamos prestamo = null;
+        String sql = "SELECT * FROM prestamos WHERE uuid=? and fechaFirma is null";
+        try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
+            stmt.setString(1, uuid);
+            try ( ResultSet rs = stmt.executeQuery();) {
+                while (rs.next()) {
+                    if (rs.getDate("fechaFirma")!=null){
+                    fechaFirma = rs.getDate("fechaFirma").toLocalDate();   
+                    }
+                    prestamo = new Prestamos(rs.getInt("idPres"), rs.getInt("periodo"), rs.getDate("fechaOfer").toLocalDate(), rs.getInt("plazo"), rs.getDouble("interes"), rs.getDouble("cantidad"), fechaFirma, rs.getDouble("cantMens"), rs.getString("uuid"));
                     lista.add(prestamo);
                 }
             }

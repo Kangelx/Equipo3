@@ -4,6 +4,16 @@
  */
 package swing.ejemplocompleto;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Random;
@@ -14,7 +24,7 @@ import java.util.Random;
  */
 public class MetodosAplicacion {
 
-    public boolean registrarUsuario(Clientes c, Perfiles p, Cuentas cu) {
+    public static boolean registrarUsuario(Clientes c, Perfiles p, Cuentas cu) {
         boolean acabado = true;
         FuncionesClientes clientes = new FuncionesClientes();
         FuncionesPerfiles perfiles = new FuncionesPerfiles();
@@ -25,7 +35,7 @@ public class MetodosAplicacion {
         return acabado;
     }
 
-    private int limpio(String uuid) { //SI ESTA LIMPIO, DEVUELVE 1 SI ES DESEMPLEADO, ESTUDIANTE O ES RESPONSABLE DE HOGAR, Y DEVUELVE 2 SI ES RENTISTA, EMPLEADO O PENSIONISTA
+    private static int limpio(String uuid) { //SI ESTA LIMPIO, DEVUELVE 1 SI ES DESEMPLEADO, ESTUDIANTE O ES RESPONSABLE DE HOGAR, Y DEVUELVE 2 SI ES RENTISTA, EMPLEADO O PENSIONISTA
         int resul = 0;
         FuncionesPerfiles perfiles = new FuncionesPerfiles();
         Perfiles perfil = perfiles.porId(uuid);
@@ -42,7 +52,7 @@ public class MetodosAplicacion {
 
     }
 
-    private double calculoPrestamo(Cuentas cuenta) {
+    private static double calculoPrestamo(Cuentas cuenta) {
         //margen de prestamo 1
         final double minPrestamo1 = 1000;
         final double maxPrestamo1 = 2000;
@@ -65,7 +75,7 @@ public class MetodosAplicacion {
     }
 
     //ESTE METODO UTILIZA DOS METODOS A PARTE: CALCULOPRESTAMO Y LIMPIO
-    public double ofrecePrestamo(String uuid, int periodo, int plazo, double interes) {
+    public static double ofrecePrestamo(String uuid, int periodo, int plazo, double interes) {
         //CALCULO DE PRESTAMO
         double prestamo = 0;
         FuncionesPerfiles perfiles = new FuncionesPerfiles();
@@ -98,7 +108,7 @@ public class MetodosAplicacion {
         return prestamo;
     }
 
-    public boolean concedePrestamo(String idPres) {
+    public static boolean concedePrestamo(int idPres) {
         boolean realizado = false;
         FuncionesPrestamo prestamos = new FuncionesPrestamo();
         Prestamos prestamo = prestamos.porId(idPres);
@@ -108,26 +118,26 @@ public class MetodosAplicacion {
         return realizado;
     }
 
-    public Cuentas consultaCuenta(String uuid) {
+    public static Cuentas consultaCuenta(String uuid) {
         FuncionesClientes funcCliente = new FuncionesClientes();
         FuncionesCuentas funcCuenta = new FuncionesCuentas();
         Cuentas cuenta = funcCuenta.porId(funcCliente.porId(uuid).getIban());
         return cuenta;
     }
 
-    public List<Prestamos> consultaPrestamos(String uuid) {
+    public static List<Prestamos> consultaPrestamos(String uuid) {
         FuncionesPrestamo prestamos = new FuncionesPrestamo();
         List<Prestamos> prestamo = prestamos.listar(uuid);
         return prestamo;
     }
 
-    public List<Prestamos> consultaPrestamosOfrecidos(String uuid) {
+    public static List<Prestamos> consultaPrestamosOfrecidos(String uuid) {
         FuncionesPrestamo prestamos = new FuncionesPrestamo();
         List<Prestamos> prestamo = prestamos.listarAceptados(uuid);
         return prestamo;
     }
 
-    public boolean ingresar(String uuid, double cantidad) {
+    public static boolean ingresar(String uuid, double cantidad) {
 
         double saldo = 0;
         FuncionesCuentas funcCuenta = new FuncionesCuentas();
@@ -140,7 +150,7 @@ public class MetodosAplicacion {
         return true;
     }
 
-    public boolean retirar(String uuid, double cantidad) {
+    public static boolean retirar(String uuid, double cantidad) {
         double saldo = 0;
         FuncionesCuentas funcCuenta = new FuncionesCuentas();
         FuncionesClientes funcCliente = new FuncionesClientes();
@@ -152,7 +162,7 @@ public class MetodosAplicacion {
         return true;
     }
 
-    public boolean transferencia(String uuidEmisor, String uuidReceptor, double cantidad) {
+    public static boolean transferencia(String uuidEmisor, String uuidReceptor, double cantidad) {
         FuncionesClientes funcCliente = new FuncionesClientes();
         FuncionesMovimientos funcMovimiento = new FuncionesMovimientos();
         boolean transferido = true;
@@ -169,6 +179,71 @@ public class MetodosAplicacion {
             transferido = false;
         }
         return transferido;
+
+    }
+
+    public static String leeUuid() {
+        String uuid = null;
+        FileReader fr = null;
+        BufferedReader br = null;
+        try {
+            fr = new FileReader("uuid/uuid.txt");
+            br = new BufferedReader(fr);
+            uuid = br.readLine();
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                if (fr != null || br != null) {
+                    br.close();
+                    fr.close();
+                }
+            } catch (IOException ex) {
+                System.out.println("Error al cerrar");
+            }
+        }
+        return uuid;
+    }
+
+    public static void escUuid(String uuid) {
+
+        try {
+            File file = new File("uuid");
+            Path toCreatePath = Paths.get(file.toURI());
+            if (!Files.exists(toCreatePath)) {
+                Files.createDirectories(toCreatePath);
+                // Añadimos el atributo a la carpeta
+                Files.setAttribute(file.toPath(), "dos:hidden", true);
+            }
+
+        } catch (IOException e) {
+
+        }
+        FileWriter fw = null;
+        PrintWriter pw = null;
+        try {
+            fw = new FileWriter("uuid/uuid.txt");
+            pw = new PrintWriter(fw);
+            pw.println(uuid);
+            
+            pw.flush();
+        } catch (IOException ex) {
+            System.out.println("Fichero no encontrado");
+        } finally {
+            try {
+                if (pw != null || fw != null) {
+                    pw.close();
+                    fw.close();
+                }
+            } catch (IOException ioe) {
+                System.out.println("Error al cerrar");
+            } catch (NullPointerException nulo) {
+                System.out.println("El flujo a cerrar es nulo");
+            }
+            
+        }
 
     }
 }
