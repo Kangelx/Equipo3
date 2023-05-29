@@ -10,7 +10,7 @@
 Nuestro equipo ha desarrollado una sorprendente aplicación basada en ventanas en Java, diseñada y construida con el propósito de resolver los desafíos más exigentes de nuestra consultoría bancaria. Además, hemos creado una robusta base de datos utilizando un diagrama relacional y un conjunto de instrucciones SQL para garantizar el almacenamiento seguro y confiable de toda la información de la aplicación. Para dar forma a nuestro proyecto, hemos empleado herramientas de diseño de UML, lo que nos ha permitido crear diagramas de casos de uso, de secuencia y de clases. Esto ha sido fundamental para comprender y visualizar la estructura y el flujo del sistema, garantizando una implementación coherente y fluida.
 Y eso no es todo. Como parte de nuestra visión de ofrecer una experiencia completa, hemos diseñado una página web con XHTML cautivadora. Esta página web tiene como objetivo promocionar el préstamo inmediato para nuestros clientes solventes, brindándoles una interfaz amigable y accesible para explorar todas las ventajas que ofrecemos. En resumen, nuestro proyecto se basa en una aplicación de consultoría bancaria poderosa y eficiente, respaldada por una base de datos sólida, una cuidadosa planificación de casos de uso y diagramas UML, y una página web atractiva para comunicarnos y atender a nuestros valiosos clientes.
 
-  - [Organización](organización.md)
+  - [organización](organización.md)
 
 Este es el documento de como nos hemos organizado.
 
