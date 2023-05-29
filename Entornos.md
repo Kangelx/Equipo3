@@ -6,10 +6,13 @@ En entorno de desarrollos hemos diseñado los diagramas de casos de uso, de sequ
 
 Índice:
 
-[Casos de uso](##casos_de_uso)
-[Diagrama de clases](##diagrama-de-clases)
+[Diagrama de Casos de uso](##diagrama-de-casos-de-uso)
 
-## Casos_de_uso
+[Diagramas Secuenciales](diagramas-secuenciales:)
+
+[Diagrama de Clases](##diagrama-de-clases:)
+
+## Diagrama de Casos de Uso
 
 Se desea crear un programa que simule un banco que registra clientes, información de estos, de sus cuentas, movimientos que se realicen en éstas, préstamos ofrecidos , aceptados  y los pagos de estos.
 
