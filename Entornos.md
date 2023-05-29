@@ -223,7 +223,10 @@ En nuestro proyecto, recogemos 6 escenarios que están represetandos en el sigui
 
 En los Diagramas de Clases hemos plasmado cómo interactúan las clases entre sí y qué métodos y atributos las componen.
 
-[Diagrama de Clases](https://github.com/Kangelx/Equipo3/blob/master/Imagenes/DiagramaClases.drawio.png)
+[Diagrama de Clases](https://github.com/Kangelx/Equipo3/blob/master/Imagenes/DiagramaClases.drawio.png)  
+  
+  
+  
 
 
 
