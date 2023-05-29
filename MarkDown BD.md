@@ -117,7 +117,7 @@ clientes.uuid where fechaOfer like "2023-05-%";
 
 ```
 
-[Volver arriba] (#Bienvenido)
+[Volver arriba](#Bienvenido)
 
 ## Script de creacción
 
