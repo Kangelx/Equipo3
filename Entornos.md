@@ -11,7 +11,7 @@ En entorno de desarrollos hemos diseñado los diagramas de casos de uso, de sequ
 
 ## Casos_de_uso
 
-Se desea crear un programa que simule un banco que registra clientes, información de estos, de sus cuentas, movimientos que se realicen en éstas, préstamos ofrecidos , aceptados y solicitados, y los pagos de estos.
+Se desea crear un programa que simule un banco que registra clientes, información de estos, de sus cuentas, movimientos que se realicen en éstas, préstamos ofrecidos , aceptados  y los pagos de estos.
 
 [Diagrama de Casos de Uso](https://github.com/Kangelx/Equipo3/blob/master/Imagenes/Diagrama%20casos%20de%20uso.drawio.png)
 
@@ -206,5 +206,12 @@ Flujo básico:
 	
 -Post-condición: se crea un nuevo préstamo.
 
+## Diagrama de clases:
+
+El Diagrama de Clases, recoge el proceso desde que se hace una petición por parte del actor hasta que se realiza la petición o surge un error.
+
+En nuestro proyecto, recogemos 6 escenarios que están represetandos en el siguiente Diagrama:
+
+[Diagramas Secuenciales](https://github.com/Kangelx/Equipo3/blob/master/Imagenes/DIAGRAMAS%20SECUENCIALES.drawio.png)
 
 [Readme](README.md)
