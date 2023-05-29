@@ -10,7 +10,7 @@ En entorno de desarrollos hemos diseñado los diagramas de casos de uso, de sequ
 
 [Diagramas Secuenciales](#diagramas-secuenciales)
 
-[Diagrama de Clases](##diagrama-de-clases:)
+[Diagrama de Clases](#diagrama-de-clases)
 
 ## Diagrama de Casos de Uso
 
@@ -39,6 +39,8 @@ Consultar estado de préstamos: se introduce el iban de una cuenta y se muestra 
 Registrar usuario: se piden los datos del usuario: uuid,dni,nombre,apellidos,teléfono,dirección,localidad,fechaNac,iban.
 
 Ofrecer préstamo: se introducen los datos del préstamo: idPres, periodo,fechaOfer,plazo,interés,cantidad,uuid.
+
+### Restricciones:
 
 Asimismo, deben tenerse en cuenta las siguientes restricciones:
 
