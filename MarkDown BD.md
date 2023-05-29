@@ -3,7 +3,7 @@
 En este apartado se describe el diseño de la base de datos, así como sus principales funcionalidades.
 
 La base de datos se descompone en 5 apartados:
-[prueba](https://es.wikipedia.org/wiki/Markdown)
+
 
 -[Diagrama Entidad-Relación (E-R)](#uno) 
 
@@ -32,7 +32,7 @@ En la entidad MOVIMIENTO, ibanDestinatario y ibanEmisor admiten nulos debido a q
 
 Ha continuación se muestra el diagrama E-R, con todas sus relaciones y cardinalidades:
 
-![Diagrama E-R](URL DIAGRAMA ER.drawio.png "E-R")
+[Diagrama E-R](URL DIAGRAMA ER.drawio.png "E-R")
 
 ## Diagrama relacional (#dos)
 
