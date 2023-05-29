@@ -9,7 +9,7 @@ La base de datos se descompone en 5 apartados:
 
 -[Diagrama Relacional](#Diagrama-relacional) 
 
--[Creacción de las tablas, datos almacenados,composición de las tablas](#Creacción-de-las-tablas,-datos-almacenados,-composición-de-las-tablas)
+-[Creacción de las tablas, datos almacenados,composición de las tablas](#creacción-de-las-tablas-datos-almacenados-composición-de-las-tablas)
 
 -[Funcionalidades extra](#cuatro)
 
