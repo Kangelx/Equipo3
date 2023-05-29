@@ -11,9 +11,9 @@ La base de datos se descompone en 5 apartados:
 
 -[Creacción de las tablas, datos almacenados,composición de las tablas](#creacción-de-las-tablas-datos-almacenados-composición-de-las-tablas)
 
--[Funcionalidades extra](#Funcionalidades extra)
+-[Funcionalidades extra](#funcionalidades-extra)
 
--[Script de creacción](#Script de creacción)
+-[Script de creacción](#script-de-creacción)
 
 ## Diagrama Entidad-Relación
 
