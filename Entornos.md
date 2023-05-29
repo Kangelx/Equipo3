@@ -2,13 +2,19 @@
 
 ---
 
-En entorno de desarrollo hemos diseñado los diagramas de casos de uso, de sequencia y de clases. Ademas hemos hecho la documentacion del proyecto en documentos de markdown y hemos estado trabajando con un repositorio en remoto en GitHub.
+En entorno de desarrollos hemos diseñado los diagramas de casos de uso, de sequencia y de clases. Además, hemos hecho la documentacion del proyecto en documentos de markdown y hemos estado trabajando con un repositorio en remoto en GitHub.
+
+Índice:
 
 [Casos de uso](##casos_de_uso)
+[Diagrama de clases](##diagrama-de-clases)
 
 ## Casos_de_uso
 
 Se desea crear un programa que simule un banco que registra clientes, información de estos, de sus cuentas, movimientos que se realicen en éstas, préstamos ofrecidos , aceptados y solicitados, y los pagos de estos.
+
+[Diagrama de Casos de Uso](https://github.com/Kangelx/Equipo3/blob/master/Imagenes/Diagrama%20casos%20de%20uso.drawio.png)
+
 Hay 2 actores en el diagrama UML, cliente y banquero.
 
 Las operaciones que debería realizar la aplicación son las que se indican a continuación:
