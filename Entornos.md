@@ -8,7 +8,7 @@ En entorno de desarrollos hemos diseñado los diagramas de casos de uso, de sequ
 
 [Diagrama de Casos de uso](##diagrama-de-casos-de-uso)
 
-[Diagramas Secuenciales](diagramas-secuenciales:)
+[Diagramas Secuenciales](#diagramas-secuenciales)
 
 [Diagrama de Clases](##diagrama-de-clases:)
 
