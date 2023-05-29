@@ -109,10 +109,8 @@ public class Ventana extends javax.swing.JFrame {
         jTableClientes3 = new javax.swing.JTable();
         RealizarOperacion = new javax.swing.JPanel();
         jPanelRegistrarCliente1 = new javax.swing.JPanel();
-        jLabelTelefono1 = new javax.swing.JLabel();
         txtApellido1 = new javax.swing.JTextField();
         jLabelApellidos1 = new javax.swing.JLabel();
-        txtTelefono1 = new javax.swing.JTextField();
         jLabelDireccion1 = new javax.swing.JLabel();
         jLabelLocalidad1 = new javax.swing.JLabel();
         jLabelIBAN1 = new javax.swing.JLabel();
@@ -890,9 +888,6 @@ public class Ventana extends javax.swing.JFrame {
 
         jPanelRegistrarCliente1.setBorder(javax.swing.BorderFactory.createTitledBorder("Registrar Cliente"));
 
-        jLabelTelefono1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabelTelefono1.setText("Concepto:");
-
         txtApellido1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtApellido1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -902,13 +897,6 @@ public class Ventana extends javax.swing.JFrame {
 
         jLabelApellidos1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabelApellidos1.setText("IBAN Receptor:");
-
-        txtTelefono1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtTelefono1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTelefono1ActionPerformed(evt);
-            }
-        });
 
         jLabelDireccion1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabelDireccion1.setText("Tipo de Operación:");
@@ -955,7 +943,7 @@ public class Ventana extends javax.swing.JFrame {
                     .addGroup(jPanelRegistrarCliente1Layout.createSequentialGroup()
                         .addGap(468, 468, 468)
                         .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 69, Short.MAX_VALUE))
                     .addGroup(jPanelRegistrarCliente1Layout.createSequentialGroup()
                         .addGroup(jPanelRegistrarCliente1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelRegistrarCliente1Layout.createSequentialGroup()
@@ -972,19 +960,14 @@ public class Ventana extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRegistrarCliente1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanelRegistrarCliente1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRegistrarCliente1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabelApellidos1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRegistrarCliente1Layout.createSequentialGroup()
-                                    .addComponent(jLabelTelefono1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(8, 8, 8)))
+                            .addComponent(jLabelApellidos1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabelIBAN1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanelRegistrarCliente1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtIBAN1, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
                             .addComponent(jCheckBox1)
-                            .addComponent(txtTelefono1)
                             .addComponent(txtApellido1, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addContainerGap(531, Short.MAX_VALUE))
+                .addContainerGap(536, Short.MAX_VALUE))
         );
         jPanelRegistrarCliente1Layout.setVerticalGroup(
             jPanelRegistrarCliente1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1003,17 +986,13 @@ public class Ventana extends javax.swing.JFrame {
                 .addGroup(jPanelRegistrarCliente1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelApellidos1)
                     .addComponent(txtApellido1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(jPanelRegistrarCliente1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtTelefono1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelTelefono1))
-                .addGap(34, 34, 34)
+                .addGap(38, 38, 38)
                 .addGroup(jPanelRegistrarCliente1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelIBAN1)
                     .addComponent(txtIBAN1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(71, 71, 71)
+                .addGap(42, 42, 42)
                 .addComponent(jCheckBox1)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
 
         btnAceptarOperacion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -1994,6 +1973,7 @@ public class Ventana extends javax.swing.JFrame {
         comboTipoCuenta.addItem("corriente");
         comboTipoRegimen.addItem("gananciales");
         comboTipoRegimen.addItem("separación de bienes");
+        comboOperacion.addItem(" ");
         comboOperacion.addItem("Transferencia");
         comboOperacion.addItem("Ingreso");
         comboOperacion.addItem("Retirada de efectivo");
@@ -2542,6 +2522,26 @@ public class Ventana extends javax.swing.JFrame {
 
     private void btnAceptarOperacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarOperacionActionPerformed
         // BOTON DE ACEPTAR OPERACION DE USUARIO
+
+        String opcion = comboOperacion.getSelectedItem().toString();
+        String uuid = MetodosAplicacion.leeUuid();
+        if (txtApellido1.getText() == null || txtIBAN1.getText() == null) {
+            JOptionPane.showMessageDialog(null, "No se han introducido los datos requeridos");
+        } else {
+            if (opcion.equalsIgnoreCase("Transferencia")) {
+                if (MetodosAplicacion.porIban(txtDireccionReg1.getText()).getUuid().equalsIgnoreCase(uuid)) {
+                    MetodosAplicacion.transferencia(MetodosAplicacion.porIban(txtDireccionReg1.getText()).getUuid(), MetodosAplicacion.porIban(txtApellido1.getText()).getUuid(), Double.parseDouble(txtIBAN1.getText()));//transferencia del emisor al receptor con la cantidad
+                }else{
+                    JOptionPane.showMessageDialog(null, "El iban del emisor no coincide con el usuario que esta pidiendo la transferencia");
+                }
+            } else if (opcion.equalsIgnoreCase("Ingreso")) {
+                MetodosAplicacion.ingresar(MetodosAplicacion.porIban(txtApellido1.getText()).getUuid(), Double.parseDouble(txtIBAN1.getText()));
+            } else {
+                MetodosAplicacion.retirar(MetodosAplicacion.porIban(txtApellido1.getText()).getUuid(), Double.parseDouble(txtIBAN1.getText()));
+            }
+        }
+
+
     }//GEN-LAST:event_btnAceptarOperacionActionPerformed
 
     private void btnVolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver1ActionPerformed
@@ -2643,16 +2643,14 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_txtIBAN1ActionPerformed
 
     private void comboOperacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboOperacionActionPerformed
+
         // TODO add your handling code here:
+
     }//GEN-LAST:event_comboOperacionActionPerformed
 
     private void txtDireccionReg1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionReg1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDireccionReg1ActionPerformed
-
-    private void txtTelefono1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefono1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelefono1ActionPerformed
 
     private void txtApellido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellido1ActionPerformed
         // TODO add your handling code here:
@@ -3038,7 +3036,6 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelNif2;
     private javax.swing.JLabel jLabelNombre2;
     private javax.swing.JLabel jLabelSitCivil2;
-    private javax.swing.JLabel jLabelTelefono1;
     private javax.swing.JLabel jLabelTelefono2;
     private javax.swing.JLabel jLabelTipRegi2;
     private javax.swing.JLabel jLabelTipoCuenta2;
@@ -3096,7 +3093,6 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JTextField txtIdUsua2;
     private javax.swing.JTextField txtNombre2;
     private javax.swing.JTextField txtPassw2;
-    private javax.swing.JTextField txtTelefono1;
     private javax.swing.JTextField txtTelefono2;
     private javax.swing.JTextField txtUsuReg2;
     // End of variables declaration//GEN-END:variables

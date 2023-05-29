@@ -4,6 +4,8 @@
  */
 package swing.ejemplocompleto;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.LinkedHashMap;
 
@@ -19,14 +21,16 @@ public class Movimientos implements Identificable {
     private String ibanDestinatario;
     private String ibanEmisor;
     private String iban;
+    private LocalDate fecha;
 
-    public Movimientos(int idOperacion, double cantidad, String concepto, String uuidDestinatario, String uuidEmisor, String iban) {
+    public Movimientos(int idOperacion, double cantidad, String concepto, String uuidDestinatario, String uuidEmisor, String iban, LocalDate fecha) {
         this.idOperacion = idOperacion;
         this.cantidad = cantidad;
         this.concepto = concepto;
         this.ibanDestinatario = uuidDestinatario;
         this.ibanEmisor = uuidEmisor;
         this.iban = iban;
+        this.fecha = fecha;
     }
 
     public Movimientos() {
@@ -35,17 +39,27 @@ public class Movimientos implements Identificable {
     @Override
     public LinkedHashMap<String, String> datosObjeto() {
         LinkedHashMap<String, String> datos = new LinkedHashMap();
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy hh:mm:ss");
         datos.put("idOperacion", String.valueOf(idOperacion));
         datos.put("cantidad", String.valueOf(cantidad));
         datos.put("concepto", concepto);
         datos.put("ibanDestinatario", ibanDestinatario);
         datos.put("ibanEmisor", ibanEmisor);
         datos.put("iban", iban);
+        datos.put("fecha", fecha.format(formato));
         return datos;
     }
 
     public int getIdOperacion() {
         return idOperacion;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
     }
 
     public void setIdOperacion(int idOperacion) {

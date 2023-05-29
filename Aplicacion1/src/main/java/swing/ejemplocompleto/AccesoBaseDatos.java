@@ -18,8 +18,8 @@ public class AccesoBaseDatos {
     // constantes a definir
     private static final String BD = "prestamos";
     private static final String USUARIO = "root";
-    private static final String CLAVE = "mysql";
-    private static final String URL = "jdbc:mysql://127.0.0.1:3306/" + BD;
+    private static final String CLAVE = "root";
+    private static final String URL = "jdbc:mysql://192.168.56.101:3306/" + BD;
     
     private AccesoBaseDatos() {
         

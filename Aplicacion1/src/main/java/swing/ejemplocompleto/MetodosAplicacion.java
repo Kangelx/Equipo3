@@ -14,6 +14,9 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Random;
@@ -169,11 +172,11 @@ public class MetodosAplicacion {
         if (funcCliente.porId(uuidEmisor) != null && funcCliente.porId(uuidReceptor) != null) {
             //retirada
             retirar(uuidEmisor, cantidad);
-            Movimientos movimiento = new Movimientos(0, cantidad, "transferencia", funcCliente.porId(uuidReceptor).getIban(), funcCliente.porId(uuidEmisor).getIban(), funcCliente.porId(uuidEmisor).getIban());
+            Movimientos movimiento = new Movimientos(0, cantidad, "transferencia", funcCliente.porId(uuidReceptor).getIban(), funcCliente.porId(uuidEmisor).getIban(), funcCliente.porId(uuidEmisor).getIban(), LocalDate.now());
             funcMovimiento.guardar(movimiento);
             //ingreso
             ingresar(uuidReceptor, cantidad);
-            movimiento = new Movimientos(0, cantidad, "transferencia", funcCliente.porId(uuidReceptor).getIban(), funcCliente.porId(uuidEmisor).getIban(), funcCliente.porId(uuidReceptor).getIban());
+            movimiento = new Movimientos(0, cantidad, "transferencia", funcCliente.porId(uuidReceptor).getIban(), funcCliente.porId(uuidEmisor).getIban(), funcCliente.porId(uuidReceptor).getIban(), LocalDate.now());
             funcMovimiento.guardar(movimiento);
         } else {
             transferido = false;
@@ -227,7 +230,7 @@ public class MetodosAplicacion {
             fw = new FileWriter("uuid/uuid.txt");
             pw = new PrintWriter(fw);
             pw.println(uuid);
-            
+
             pw.flush();
         } catch (IOException ex) {
             System.out.println("Fichero no encontrado");
@@ -242,8 +245,27 @@ public class MetodosAplicacion {
             } catch (NullPointerException nulo) {
                 System.out.println("El flujo a cerrar es nulo");
             }
-            
+
         }
+
+    }
+
+    public static Clientes porIban(String iban) {
+        Clientes cliente = null;
+        String sql = "SELECT uuid, dni, nombre, apellidos, telefono, direccion, localidad, fechaNac, iban FROM clientes WHERE iban=?";
+        try ( PreparedStatement stmt = AccesoBaseDatos.getInstance().getConn().prepareStatement(sql);) {
+            stmt.setString(1, iban);
+            try ( ResultSet rs = stmt.executeQuery();) {
+                if (rs.next()) {
+                    cliente = new Clientes(rs.getString("uuid"), rs.getString("dni"), rs.getString("nombre"), rs.getString("apellidos"), rs.getString("telefono"), rs.getString("direccion"), rs.getString("localidad"), rs.getDate("fechaNac").toLocalDate(), rs.getString("iban"));
+                }
+            }
+
+        } catch (SQLException ex) {
+            // errores
+            System.out.println("SQLException: " + ex.getMessage());
+        }
+        return cliente;
 
     }
 }

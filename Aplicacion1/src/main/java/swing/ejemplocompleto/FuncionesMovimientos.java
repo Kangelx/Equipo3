@@ -5,9 +5,13 @@
 package swing.ejemplocompleto;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 /**
  *
@@ -26,7 +30,7 @@ public class FuncionesMovimientos {
             stmt.setString(1, iban);
             try ( ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
-                    movimiento = new Movimientos(rs.getInt("idOperacion"), rs.getDouble("cantidad"), rs.getString("concepto"), rs.getString("ibanDestinatario"), rs.getString("ibanEmisor"), rs.getString("iban"));
+                    movimiento = new Movimientos(rs.getInt("idOperacion"), rs.getDouble("cantidad"), rs.getString("concepto"), rs.getString("ibanDestinatario"), rs.getString("ibanEmisor"), rs.getString("iban"), rs.getDate("fecha").toLocalDate());
                 }
             }
             
@@ -41,8 +45,7 @@ public class FuncionesMovimientos {
     public boolean guardar(Movimientos m) {
         boolean realizado=false;//BOOLEANO PARA VENTANAS
         String sql = null;
-
-        sql = "INSERT INTO usuarios( cantidad, concepto, ibanDestinatario, ibanEmisor, iban) VALUES ( ?, ?, ?, ?, ?)";
+        sql = "INSERT INTO movimientos( cantidad, concepto, ibanDestinatario, ibanEmisor, iban, fecha) VALUES ( ?, ?, ?, ?, ?, ?)";
 
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
             
@@ -51,6 +54,7 @@ public class FuncionesMovimientos {
             stmt.setString(3, m.getIbanDestinatario());
             stmt.setString(4, m.getIbanEmisor());
             stmt.setString(5, m.getIban());
+            stmt.setDate(6, Date.valueOf(m.getFecha()));
             int salida = stmt.executeUpdate();
             if (salida != 1) {
                 throw new Exception(" No se ha insertado/modificado un solo registro");
