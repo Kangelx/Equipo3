@@ -70,7 +70,7 @@ La columna "plazo" contiene el número de días que se le otorgan al cliente par
 
 El resto de columnas son autoexplicatorias.
 
-FOTO A BASE DE DATOS ESQUEMA-----------------------
+[Esquema de la base de datos](https://github.com/Kangelx/Equipo3/blob/basedatos/BASE%20DE%20DATOS%20ESQUEMA.PNG)
 
 ## Funcionalidades extra (#cuatro)
 
