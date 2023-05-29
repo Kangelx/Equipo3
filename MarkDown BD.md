@@ -11,9 +11,9 @@ La base de datos se descompone en 5 apartados:
 
 -[Creacción de las tablas, datos almacenados,composición de las tablas](#creacción-de-las-tablas-datos-almacenados-composición-de-las-tablas)
 
--[Funcionalidades extra](#cuatro)
+-[Funcionalidades extra](#Funcionalidades extra)
 
--[Script de creacción](#cinco)
+-[Script de creacción](#Script de creacción)
 
 ## Diagrama Entidad-Relación
 
@@ -72,7 +72,7 @@ El resto de columnas son autoexplicatorias.
 
 [Esquema de la base de datos](https://github.com/Kangelx/Equipo3/blob/basedatos/BASE%20DE%20DATOS%20ESQUEMA.PNG)
 
-## Funcionalidades extra (#cuatro)
+## Funcionalidades extra
 
 Me pareció interesante añadir algo que no hayamos visto en clase, así que he añadido 2 EVENTS que se activaran periódicamente hasta una determinada fecha.
 
@@ -119,7 +119,7 @@ clientes.uuid where fechaOfer like "2023-05-%";
 
 [Volver arriba] (#volver)
 
-## Script de creacción (#cinco)
+## Script de creacción
 
 ```sql
 CREATE DATABASE  IF NOT EXISTS `prestamos` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
