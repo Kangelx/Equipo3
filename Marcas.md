@@ -68,7 +68,7 @@ Aqui os dejo un ejemplo de un trozo de codigo de esta pagina con sus respectivos
 }
 ``` 
 
-Este seria un ejemplo del codigo anterior explicado
+Este seria un ejemplo del codigo anterior explicado:
 
 ![ejemplo1](Imagenes/ejemplo1.png)
 
@@ -205,7 +205,7 @@ Os enseño un ejemplo de formulario hecho utilizado en nuestra pagina:
 </div>
 ```
 
-# Y finalmente procederemos a enseñar la experiencia de navegacion por nuestra pagina web.
+# Y finalmente procederemos a enseñar la experiencia de navegacion por Banco Nuevo Proyecto.
 
 
 [Readme](README.md)
