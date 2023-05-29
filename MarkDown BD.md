@@ -5,7 +5,7 @@ En este apartado se describe el diseño de la base de datos, así como sus princ
 La base de datos se descompone en 5 apartados:
 
 
-[Diagrama Entidad-Relación (E-R)](#Diagrama Entidad-Relación) 
+-[Diagrama Entidad-Relación (E-R)] (#Diagrama Entidad-Relación) 
 
 -[Diagrama Relacional](#dos) 
 
