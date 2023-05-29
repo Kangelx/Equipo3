@@ -4,7 +4,7 @@
 
 En entorno de desarrollos hemos diseñado los diagramas de casos de uso, de sequencia y de clases. Además, hemos hecho la documentacion del proyecto en documentos de markdown y hemos estado trabajando con un repositorio en remoto en GitHub.
 
-Índice:
+### **Índice:**
 
 [Diagrama de Casos de uso](##diagrama-de-casos-de-uso)
 
@@ -229,10 +229,10 @@ En los Diagramas de Clases hemos plasmado cómo interactúan las clases entre s�
   <br>
   <br>
 
-
+<hr>
 
 [Readme](README.md)
 
-
+<hr>
 
 [Volver arriba](#)
