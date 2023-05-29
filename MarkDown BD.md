@@ -50,7 +50,7 @@ MOVIMIENTOS contiene la FK de CUENTAS debido a que una cuenta puede realizar var
 
 En esta foto puede verse el diagrama completo:
 
-FOTO AL DIAGRAMA RELACIONAL---------------------
+[Diagrama relacional](https://github.com/Kangelx/Equipo3/blob/basedatos/Foto%20diagrama%20Relacional.PNG)
 
 ## Creacción de las tablas, datos almacenados, composición de las tablas {#tres}
 
