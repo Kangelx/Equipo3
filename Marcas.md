@@ -68,6 +68,8 @@ Aqui os dejo un ejemplo de un trozo de codigo de esta pagina con sus respectivos
 }
 ``` 
 
+Este seria un ejemplo del codigo anterior explicado
+
 ![ejemplo1](Imagenes/ejemplo1.png)
 
 Una vez entremos en en login veremos un cuadro de inicio de sesion en el que nos pediran DNI y contraseña del contacto , junto con las opciones de inciar sesion y la de crear nuevo usuario.Seguido muestro el codigo que hemos necesitado para hacer el cuadro de inicio de sesion:
@@ -102,13 +104,108 @@ Una vez entremos en en login veremos un cuadro de inicio de sesion en el que nos
 ![ejemplo2](Imagenes/ejemplo2.png)
 
 
-Una vez apretemos el boton de "INICIO SESION" entraremos al home de nuestra pagina web que tendra este aspecto en el cual podremos movernos por un menu lateral o un menu intuitivo de logos :
-
-![ejemplo3](Imagenes/Ejemplo3.png)
+Os enseño un ejemplo de formulario hecho utilizado en nuestra pagina:
 
 
-Os dejo seguidamente como seria una de las interfaces llamada NUEVO PRESTAMO para que veais el ejmeplo de como seria moverse por cada uno de las interfaces de la pagina.
+``` html
+ <div class="container-fluid">
+            	<div class="container-fluid form-neon">
+                    
+                        
+                        
+                        
+					<form action="" autocomplete="off">
+						<fieldset>
+							<legend><i class="far fa-plus-square"></i> &nbsp; Información del prestamo</legend>
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-12 col-md-4">
+										<div class="form-group">
+											<label for="prestamo_fecha_inicio">Nombre</label>
+											<input type="text" class="form-control" name="prestamo_fecha_inicio" id="admin-dni">
+										</div>
+									</div>
+									<div class="col-12 col-md-4">
+										<div class="form-group">
+											<label for="prestamo_fecha_final">DNI/NIE</label>
+											<input type="text" class="form-control" name="prestamo_fecha_final" id="prestamo_fecha_final">
+										</div>
+									</div>
+									<div class="col-12 col-md-4">
+										<div class="form-group">
+											<label for="prestamo_fecha_final">Ingresos del ultimo mes</label>
+											<input type="double" class="form-control" name="prestamo_fecha_final" id="prestamo_fecha_final">
+										</div>
+									</div>
+                                    <div class="col-12 col-md-4">
+	                                    <div class="form-group">
+	                                        <label for="prestamo_estado" class="bmd-label-floating">Plazos</label>
+	                                        <select class="form-control" name="item_estado" id="item_estado">
+	                                            <option value="" selected="" disabled="">Seleccione una opción</option>
+	                                            <option value="Prestamo">3 meses</option>
+	                                            <option value="Reservacion">6 meses</option> 
+                                                <option value="Prestamo">9 meses</option>
+	                                            <option value="Reservacion">12 meses</option> 
+                                                <option value="Prestamo">18 meses</option>
+	                                            <option value="Reservacion">24 meses</option> 
+                                                
+	                                            
+	                                        </select>
+	                                    </div>
+                                    </div>
+									<div class="col-12 col-md-4">
+	                                    <div class="form-group">
+	                                        <label for="prestamo_estado" class="bmd-label-floating">Estado civil</label>
+	                                        <select class="form-control" name="item_estado" id="item_estado">
+	                                            <option value="" selected="" disabled="">Seleccione una opción</option>
+	                                            <option value="Prestamo">Soltero</option>
+	                                            <option value="Reservacion">Casado</option> 
+                                                
+	                                            
+	                                        </select>
+	                                    </div>
+	                                </div>
+                                    <div class="col-12 col-md-4">
+	                                    <div class="form-group">
+	                                        <label for="prestamo_estado" class="bmd-label-floating">Situacion laboral</label>
+	                                        <select class="form-control" name="item_estado" id="item_estado">
+	                                            <option value="" selected="" disabled="">Seleccione una opción</option>
+	                                            <option value="Prestamo">Empleado</option>
+	                                            <option value="Reservacion">Desempleado</option> 
+                                                <option value="Prestamo">Autonomo</option>
+	                                            <option value="Reservacion">Pensionista</option> 
+                                                <option value="Prestamo">Rentista</option>
+	                                            <option value="Reservacion">Estudiante</option> 
+                                                <option value="Prestamo">Empleado</option>
+	                                            <option value="Reservacion">Responsable del hogar</option> 
+                                                
+	                                            
+	                                        </select>
+	                                    </div>
+	                                </div>
+									<div class="col-12 col-md-6">
+										<div class="form-group">
+											<label for="prestamo_total" class="bmd-label-floating">Importe del préstamo a solicitar</label>
+											<input type="double" class="form-control" name="prestamo_total" id="prestamo_total" maxlength="8">
+										</div>
+									</div>
+	                               
+	                                
+								</div>
+							</div>
+						</fieldset>
+						<br><br><br>
+						<p class="text-center" style="margin-top: 40px;">
+							<button type="reset" class="btn btn-raised btn-secondary btn-sm"><i class="fas fa-paint-roller"></i> &nbsp; LIMPIAR</button>
+							&nbsp; &nbsp;
+							<button type="submit" class="btn btn-raised btn-info btn-sm"><i class="far fa-save"></i> &nbsp; SOLICITAR</button>
+						</p>
+					</form>
+            	</div>
+</div>
+```
 
-![ejemplo4](Imagenes/Ejemplo4.png)
+# Y finalmente procederemos a enseñar la experiencia de navegacion por nuestra pagina web.
+
 
 [Readme](README.md)
