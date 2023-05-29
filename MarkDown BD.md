@@ -7,9 +7,9 @@ La base de datos se descompone en 5 apartados:
 
 -[Diagrama Entidad-Relación (E-R)](#Diagrama-Entidad-Relación) 
 
--[Diagrama Relacional](#dos) 
+-[Diagrama Relacional](#Diagrama-relacional) 
 
--[Creacción de las tablas, datos almacenados,composición de las tablas](#tres)
+-[Creacción de las tablas, datos almacenados,composición de las tablas](Creacción-de-las-tablas,-datos-almacenados,-composición-de-las-tablas)
 
 -[Funcionalidades extra](#cuatro)
 
@@ -34,7 +34,7 @@ Ha continuación se muestra el diagrama E-R, con todas sus relaciones y cardinal
 
 [Diagrama E-R](https://github.com/Kangelx/Equipo3/blob/basedatos/Diagrama%20E-R.drawio.png)
 
-## Diagrama relacional (#dos)
+## Diagrama relacional 
 
 A partir del diagrama E-R, he procedido a realizar el diagrama relacional que será lo que va a ser transladado a la base de datos.
 
@@ -52,7 +52,7 @@ En esta foto puede verse el diagrama completo:
 
 [Diagrama relacional](https://github.com/Kangelx/Equipo3/blob/basedatos/Foto%20diagrama%20Relacional.PNG)
 
-## Creacción de las tablas, datos almacenados, composición de las tablas {#tres}
+## Creacción de las tablas, datos almacenados, composición de las tablas
 
 Una vez diseñada la base de datos, he procedido a la creacción de las tablas con las así como sus restricciones basándome en el diagrama relacional.
 
