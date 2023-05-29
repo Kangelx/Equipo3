@@ -1,0 +1,7 @@
+idPres,periodo,fechaOfer,plazo,interes,cantidad,fechaFirma,cantMens,uuid,nombre,apellidos,telefono
+"10,16,2023-05-24,18,2.5,3000,NULL,NULL,9eadecc2-fa5c-11ed-be56-0242ac120002,Laura,""Hernández Martínez"",654987321"
+"11,13,2023-05-24,48,4.8,15000,NULL,NULL,9f9b52f0-fa5e-11ed-be56-0242ac120002,Sofía,""Rodríguez Sánchez"",987654321"
+"12,12,2023-05-24,24,3.2,7000,NULL,NULL,a4d9a7e5-fa5b-11ed-be56-0242ac120002,Miguel,""Sánchez Fernández"",123456789"
+"13,11,2023-05-25,12,2.7,4000,NULL,NULL,bf3da61b-fa61-11ed-be56-0242ac120002,Lucía,""Rodríguez Sánchez"",123456789"
+"14,12,2023-05-24,36,3.7,10000,NULL,NULL,c6a378ac-fa5d-11ed-be56-0242ac120002,Marina,""López Rodríguez"",654987321"
+"15,14,2023-05-24,18,2.3,6000,NULL,NULL,c7d50d9f-fa61-11ed-be56-0242ac120002,Andrés,""Rodríguez Sánchez"",987654321"
