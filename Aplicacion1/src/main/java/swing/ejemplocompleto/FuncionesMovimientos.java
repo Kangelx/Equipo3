@@ -19,14 +19,14 @@ public class FuncionesMovimientos {
     }
     
     
-    public Movimientos porId(int id) {
+    public Movimientos porId(String iban) {
         Movimientos movimiento = null;
-        String sql = "SELECT * FROM movimientos WHERE idOperacion=?";
+        String sql = "SELECT * FROM movimientos WHERE iban=?";
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
-            stmt.setInt(1, id);
+            stmt.setString(1, iban);
             try ( ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
-                    movimiento = new Movimientos(rs.getInt("idOperacion"), rs.getDouble("cantidad"), rs.getString("concepto"), rs.getString("uuidDestinatario"), rs.getString("uuidEmisor"), rs.getString("iban"));
+                    movimiento = new Movimientos(rs.getInt("idOperacion"), rs.getDouble("cantidad"), rs.getString("concepto"), rs.getString("ibanDestinatario"), rs.getString("ibanEmisor"), rs.getString("iban"));
                 }
             }
             

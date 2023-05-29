@@ -50,13 +50,14 @@ public class FuncionesPrestamo{
         boolean realizado=false;//BOOLEANO PARA VENTANAS
         String sql = null;
         if (porId(p.getIdPres()) !=null) {
-            sql = "UPDATE prestamos SET periodo=?, fechaOfer=?, plazo=?, interes=?, cantidad=?, fechafirma=?, cantMens=?, uuid=? WHERE idPres=?";
+            sql = "UPDATE prestamos SET periodo=?, fechaOfer=?, plazo=?, interes=?, cantidad=?, fechafirma=?, uuid=?, cantMens=?  WHERE idPres=?";
         } else {
-            sql = "INSERT INTO prestamos( periodo, fechaOfer, plazo, interes, cantidad, fechaFirma, cantMens, uuid) VALUES ( ? , ? , ? , ? , ? , ? , ? , ? )";
+            sql = "INSERT INTO prestamos( periodo, fechaOfer, plazo, interes, cantidad, fechaFirma, uuid) VALUES ( ? , ? , ? , ? , ? , ? , ? )";
         }
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
             
             if (porId(p.getIdPres()) != null) {
+                stmt.setDouble(8, p.getCantMens());
                 stmt.setInt(9, p.getIdPres());
             }
             stmt.setInt(1, p.getPeriodo());
@@ -65,8 +66,7 @@ public class FuncionesPrestamo{
             stmt.setDouble(4, p.getInteres());
             stmt.setDouble(5, p.getCantidad());
             stmt.setDate(6, Date.valueOf(p.getFechaFirma()));
-            stmt.setDouble(7, p.getCantMens());
-            stmt.setString(8, p.getUuid());
+            stmt.setString(7, p.getUuid());
             
             int salida = stmt.executeUpdate();
             if (salida != 1) {
