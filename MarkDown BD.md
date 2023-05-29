@@ -32,7 +32,7 @@ En la entidad MOVIMIENTO, ibanDestinatario y ibanEmisor admiten nulos debido a q
 
 Ha continuación se muestra el diagrama E-R, con todas sus relaciones y cardinalidades:
 
-[Diagrama E-R](Diagrama E-R.drawio.png)
+[Diagrama E-R](https://github.com/Kangelx/Equipo3/blob/basedatos/Diagrama%20E-R.drawio.png)
 
 ## Diagrama relacional (#dos)
 
