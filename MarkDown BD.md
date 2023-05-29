@@ -39,9 +39,13 @@ Ha continuación se muestra el diagrama E-R, con todas sus relaciones y cardinal
 A partir del diagrama E-R, he procedido a realizar el diagrama relacional que será lo que va a ser transladado a la base de datos.
 
 PAGOS contiene la FK propagada de PRESTAMOS ya que un prestamo puede contener varios pagos.
+
 PRESTAMOS contiene la FK propagada de CLIENTES a razón de que un cliente puede tener varios prestamos.
+
 PERFILES contiene la FK de CLUIENTES ya que un cliente puede tener un perfil o no.
+
 CLIENTES contiene la FK "iban" propagada de CUENTAS ya que una cuenta puede tener varios titulares, dicha FK debe admitir nulos ya que puede haber antiguos clientes almacenados en la base de datos que ya no dispongan de cuenta.
+
 MOVIMIENTOS contiene la FK de CUENTAS debido a que una cuenta puede realizar varios movimientos y un movimiento solo puede ser realizado desde una cuenta.
 
 En esta foto puede verse el diagrama completo:
