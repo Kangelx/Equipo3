@@ -44,7 +44,7 @@ En esta foto puede verse el diagrama completo:
 
 FOTO AL DIAGRAMA RELACIONAL---------------------
 
-## Creacción de las tablas, datos almacenados, composición de las tablas (#tres)
+## Creacción de las tablas, datos almacenados, composición de las tablas {#tres}
 
 Una vez diseñada la base de datos, he procedido a la creacción de las tablas con las así como sus restricciones basándome en el diagrama relacional.
 
