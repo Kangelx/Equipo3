@@ -16,7 +16,7 @@ Hemos desarrollado el programa basado en los diagramas realizados previamente.
 
   - [Bases_de_datos](Bases.md)
 
-Se ha diseñado diagrama entidad-relacion y se ha implementado en la creacion de la base de datos.
+Se ha diseñado diagrama entidad-relacion, diagrama relacional y se ha implementado en la creacion de la base de datos, así como funcionalidades extra(eventos y vistas).
 
   - [Entornos_de_Desarrollo](Entornos.md)
 
