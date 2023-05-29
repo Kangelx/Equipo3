@@ -4,7 +4,7 @@
 
 En entorno de desarrollo hemos diseñado los diagramas de casos de uso, de sequencia y de clases.
 
-[Casos de uso](## casos_de_uso)
+[Casos de uso](##casos_de_uso)
 
 ## Casos_de_uso
 
