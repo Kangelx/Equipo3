@@ -14,7 +14,7 @@ Y eso no es todo. Como parte de nuestra visión de ofrecer una experiencia compl
 
 Este es el documento de como nos hemos organizado.
 
-  - [Programación](Programaci%C3%B3n.md)
+  - [Programación](programaci%C3%B3n.md)
   
 Hemos desarrollado el programa basado en los diagramas realizados previamente.
 
