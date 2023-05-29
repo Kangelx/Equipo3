@@ -91,7 +91,7 @@ La base de datos está acabada, falta añadir funcionalidades extra. Se ha modif
 Hemos añadido eventos a la base de datos. Modificado y añadido algunas columnas a la base de datos. Hemos empezado a realizar los métodos que van a interactuar con las ventanas. Hemos acabado el esquema de las clases. Diseñado la estructura general de las ventanas. Se ha ampliado la página web, añadiendo una página de inicio. Se han mejorado los formularios.
 
 
-DIA 5
+## DIA 5
 
 Se ha hecho un pequeño ajuste en la base de datos.
 Se ha añadido un evento.
