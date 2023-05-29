@@ -78,13 +78,29 @@ Diagramas de secuencia.
 
 ### Reunión al finalizar:
 
-Se han perfeccionado los diagramas E-R y relacional debido a que se han introducido cambios y se han ajustado las relaciones y tablas para simplificar el trabajo a la hora de programar. Se han relizado todos los diagramas secuenciales. Se han hecho modificaciones en el diagrama de clases y casos de uso. Hemos empezado con las funciones entre Java y SQL. Hemos comprobado la funcionalidad del servidor con la base de datos y la página web. Seguimos desarrollando la página web añadiendo formularios, enlaces a otras páginas.
+Se han perfeccionado los diagramas E-R y relacional debido a que se han introducido cambios y se han ajustado las relaciones y tablas para simplificar el trabajo a la hora de programar.
+
+Se han relizado todos los diagramas secuenciales. Se han hecho modificaciones en el diagrama de clases y casos de uso. Hemos empezado con las funciones entre Java y SQL. 
+
+Hemos comprobado la funcionalidad del servidor con la base de datos y la página web.
+
+Seguimos desarrollando la página web añadiendo formularios, enlaces a otras páginas.
 
 Ha sido un día muy productivo, hemos empezado a coger velocidad.
 
 ## DIA 4
 
-La base de datos está acabada, falta añadir funcionalidades extra. Se ha modificado algunos atributos en la base de datos y se ha modificado una relación para que sea más facil de programar. Se han insertado todos los datos en la base de datos. Se ha realizado el documento Hoy nos vamos a dedicar a añadir triggers y procedimientos a la base de datos. Continuaremos haciendo la página web. Acabaremos el esquema de clase. Pasar los cambios hechos en la base de datos a Java. Comenzar con ventanas en Java.
+La base de datos está acabada, falta añadir funcionalidades extra.
+
+Se ha modificado algunos atributos en la base de datos y se ha modificado una relación para que sea más facil de programar.
+
+Se han insertado todos los datos en la base de datos. Se ha realizado el documento Hoy nos vamos a dedicar a añadir triggers y procedimientos a la base de datos.
+
+Continuaremos haciendo la página web.
+
+Acabaremos el esquema de clase. Pasar los cambios hechos en la base de datos a Java.
+
+Comenzar con ventanas en Java.
 
 ### Reunión al finalizar:
 
@@ -99,15 +115,66 @@ Se ha añadido un evento.
 Qué vamos a hacer hoy:
 
 Juntar ventanas con la aplicación y comprobar que es funcional.
+
 Añadir el esquema de casos de uso y revisar el de clases.
+
 Acabar los métodos para las ventanas.
+
 Implementar la base de datos en el servidor.
+
 Terminaremos la página web.
+
 Continuar con el MarkDown.
 
 Implementado la página web y la base de datos en el servidor y hemos comprobado que se puede acceder des de otra maquina al servidor web y a la base de datos. Hemos terminado la pagina web y hemos empezado la documentación en markdown.
+
 Se ha realizado el diagrama de casos de uso, se ha realizado la descripción de casos de uso, se ha realizado la base de datos correctamente completamente funcional.
+
 Por la parte de programación, se ha finalizado la parte de métodos y hemos añadido mas ventanas, añadir formularios y perfeccionado la portada.
+
+## DIA 6
+
+Dia 6
+Hemos añadido una vista en base de datos.
+
+Hemos realizado el MarkDown de base de datos.
+
+Hemos finalizado la creación de ventanas.
+
+Formularios en Java.
+
+Se han realizado la consulta de préstamos en ventanas.
+
+Pequeñas correcciones generales.
+
+
+### Qué vamos a hacer hoy:
+
+Ordenar el repositorio de Entornos.
+
+Acabar el MarkDown de Entornos.
+
+Realizar el MarkDown de Programación.
+
+Implementar el programa de Java en el entorno de máquinas virtuales.
+
+Preparar la presentación.
+
+Acabar de añadir el código a los botones en Java.
+
+### Reunión al finalizar:
+
+Hemos arreglado el diagrama de clases y diagrama de secuencia.
+
+Se ha finalizado el MarkDown de Entornos y Java.
+
+Hemos acabado la programación de la aplicación.
+
+Hemos preparado la presentación.
+
+Se han hecho pequeñas modificaciones en los MarkDown.
+
+Hemos enlazado el MarkDown a una Página Web.
 
 
 [Readme](README.md)
