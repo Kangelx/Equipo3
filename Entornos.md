@@ -85,7 +85,7 @@ No puede haber 2 clientes con el mismo dni.
 
 -Post-condición: se crea un  movimiento.
 
-Aceptar préstamo preestablecido:
+## Aceptar préstamo preestablecido:
 
 -Actores Involucrados: Cliente.
 
@@ -107,7 +107,7 @@ Aceptar préstamo preestablecido:
 	
 -Post-condición: se crea un objeto prestamoAceptado.
 
-Consultar préstamos ofrecido:
+## Consultar préstamos ofrecido:
 
 -Actores involucrados: Cliente.
 
@@ -152,7 +152,7 @@ Post-condición: El  estado del sistema no cambia. Se muestra los datos de los p
 	
 -Post-condición: se crea un préstamos y el cliente tiene un préstamo asociado más.
 
-Consultar estado de préstamo:
+## Consultar estado de préstamo:
 
 -Actores involucrados: Cliente.
 
@@ -173,7 +173,7 @@ Consultar estado de préstamo:
 	*Si en el paso 3 se detecta que no existe ese uuidm se muestra un mensaje que debe aceptar el cliente y se pasa al punto 4.
 -Post-condición: No hay cambios en el sistema. Se muestra los datos de los préstamos asociados.
 
-Registrar usuario:
+## Registrar usuario:
 
 -Actores involucrados: Banquero.
 
