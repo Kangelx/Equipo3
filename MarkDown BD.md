@@ -1,4 +1,4 @@
-[Bienvenido, estás en la parte de Base de Datos del Equipo 3.](#volver)
+Bienvenido, estás en la parte de Base de Datos del Equipo 3
 
 En este apartado se describe el diseño de la base de datos, así como sus principales funcionalidades.
 
@@ -117,7 +117,7 @@ clientes.uuid where fechaOfer like "2023-05-%";
 
 ```
 
-[Volver arriba] (#volver)
+[Volver arriba] (#Bienvenido)
 
 ## Script de creacción
 
