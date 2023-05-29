@@ -7,7 +7,7 @@ Esta es la configuracion del servidor.
 ![servidor](Imagenes/serverconf.png "ServerConf")
 
 He descargado el IIS de windows y así es como se ve la pagina desde la maquina de windows 10
-despues de hacer unaos cambios a modo de comprobacion.
+despues de hacer unos cambios a modo de comprobacion.
 
 ![pruebapag](Imagenes/Conexion.png "Conexion")
 
