@@ -65,7 +65,12 @@ public class FuncionesPrestamo{
             stmt.setInt(3, p.getPlazo());
             stmt.setDouble(4, p.getInteres());
             stmt.setDouble(5, p.getCantidad());
-            stmt.setDate(6, Date.valueOf(p.getFechaFirma()));
+            if (p.getFechaFirma()==null){
+                stmt.setDate(6, null);
+            }else{
+                stmt.setDate(6, Date.valueOf(p.getFechaFirma()));
+            }
+            
             stmt.setString(7, p.getUuid());
             
             int salida = stmt.executeUpdate();

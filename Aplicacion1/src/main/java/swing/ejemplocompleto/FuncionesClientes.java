@@ -9,6 +9,8 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -101,6 +103,25 @@ public class FuncionesClientes implements Repositorio<Clientes>{
             System.out.println(ex.getMessage());
         }
         return realizado;
+    }
+    
+    public List<Clientes> listaClientes(){
+        Clientes cli;
+        List<Clientes> cliente= new ArrayList();
+        String sql = "SELECT uuid, dni, nombre, apellidos, telefono, direccion, localidad, fechaNac, iban FROM clientes";
+        try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
+            try ( ResultSet rs = stmt.executeQuery();) {
+                while (rs.next()) {
+                    cli = new Clientes(rs.getString("uuid"), rs.getString("dni"), rs.getString("nombre"), rs.getString("apellidos"), rs.getString("telefono"), rs.getString("direccion"), rs.getString("localidad"), rs.getDate("fechaNac").toLocalDate(), rs.getString("iban"));
+                    cliente.add( cli);
+                }
+            }
+            
+        } catch (SQLException ex) {
+            // errores
+            System.out.println("SQLException: " + ex.getMessage());
+        }
+        return cliente;
     }
     
 }

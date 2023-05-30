@@ -42,9 +42,9 @@ public class FuncionesCuentas implements Repositorio<Cuentas>{
         boolean realizado=false;//BOOLEANO PARA VENTANAS
         String sql = null;
         if (porId(c.getIban()) != null) {
-            sql = "UPDATE usuarios SET iban=?, tipocuenta=?, saldo=?, nominaUltimo=?, nominaMedAnual=? WHERE iban=?";
+            sql = "UPDATE cuentas SET iban=?, tipocuenta=?, saldo=?, nominaUltimo=?, nominaMedAnual=? WHERE iban=?";
         } else {
-            sql = "INSERT INTO usuarios(iban, tipoCuenta, saldo, nominaUltimo, nominaMedAnual) VALUES (?,?,?,?,?)";
+            sql = "INSERT INTO cuentas(iban, tipoCuenta, saldo, nominaUltimo, nominaMedAnual) VALUES (?,?,?,?,?)";
         }
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
             

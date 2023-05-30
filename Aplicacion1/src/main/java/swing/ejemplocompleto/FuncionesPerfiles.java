@@ -22,12 +22,17 @@ public class FuncionesPerfiles implements Repositorio<Perfiles>{
     @Override
     public Perfiles porId(String uuid) {
         Perfiles perfil = null;
-        String sql = "SELECT *  FROM usuarios WHERE uuid=?";
+        String sql = "SELECT *  FROM perfiles WHERE uuid=?";
         try ( PreparedStatement stmt = getConnection().prepareStatement(sql);) {
             stmt.setString(1, uuid);
             try ( ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
-                    perfil = new Perfiles(rs.getString("usuario"), rs.getString("uuid"), rs.getString("contrasena"), GestionEnum.transSitCivil(rs.getString("situacionCivil")), GestionEnum.transSitLaboral(rs.getString("situacionLaboral")), rs.getBoolean("moroso"), rs.getBoolean("procesoJudicial"), rs.getString("uuidPareja"), GestionEnum.transRegimen(rs.getString("regimen")));
+                    TipoRegimen aux=null;
+                    if (rs.getString("regimen")!=null){
+                        aux =GestionEnum.transRegimen(rs.getString("regimen"));
+                    }
+                    
+                    perfil = new Perfiles(rs.getString("usuario"), rs.getString("uuid"), rs.getString("contrasena"), GestionEnum.transSitCivil(rs.getString("situacionCivil")), GestionEnum.transSitLaboral(rs.getString("situacionLaboral")), rs.getBoolean("moroso"), rs.getBoolean("procesoJudicial"), rs.getString("uuidPareja"), aux);
                 }
             }
             
